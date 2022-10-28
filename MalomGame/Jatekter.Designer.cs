@@ -132,9 +132,9 @@ namespace MalomGame
             // Tabla
             // 
             this.Tabla.Image = ((System.Drawing.Image)(resources.GetObject("Tabla.Image")));
-            this.Tabla.Location = new System.Drawing.Point(198, 12);
+            this.Tabla.Location = new System.Drawing.Point(272, 60);
             this.Tabla.Name = "Tabla";
-            this.Tabla.Size = new System.Drawing.Size(615, 605);
+            this.Tabla.Size = new System.Drawing.Size(481, 481);
             this.Tabla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Tabla.TabIndex = 17;
             this.Tabla.TabStop = false;
@@ -145,7 +145,6 @@ namespace MalomGame
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1009, 616);
-            this.Controls.Add(this.Tabla);
             this.Controls.Add(this.FeketeGyozelmekSzamaLabel);
             this.Controls.Add(this.FeketeNevLabel);
             this.Controls.Add(this.FeherGyozelmekSzamaLabel);
@@ -154,6 +153,7 @@ namespace MalomGame
             this.Controls.Add(this.FeketeAmong);
             this.Controls.Add(this.FeherFeladas);
             this.Controls.Add(this.FeherAmong);
+            this.Controls.Add(this.Tabla);
             this.MaximumSize = new System.Drawing.Size(1025, 655);
             this.MinimumSize = new System.Drawing.Size(1025, 655);
             this.Name = "Jatekter";
