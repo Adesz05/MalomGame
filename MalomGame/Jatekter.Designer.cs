@@ -30,104 +30,104 @@ namespace MalomGame
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Jatekter));
-            this.PirosAmong = new System.Windows.Forms.PictureBox();
-            this.PirosFeladas = new System.Windows.Forms.Button();
-            this.KekAmong = new System.Windows.Forms.PictureBox();
-            this.KekFeladas = new System.Windows.Forms.Button();
-            this.PirosGyozelmekSzamaLabel = new System.Windows.Forms.Label();
-            this.PirosNevLabel = new System.Windows.Forms.Label();
-            this.KekGyozelmekSzamaLabel = new System.Windows.Forms.Label();
-            this.KekNevLabel = new System.Windows.Forms.Label();
+            this.FeherAmong = new System.Windows.Forms.PictureBox();
+            this.FeherFeladas = new System.Windows.Forms.Button();
+            this.FeketeAmong = new System.Windows.Forms.PictureBox();
+            this.FeketeFeladas = new System.Windows.Forms.Button();
+            this.FeherGyozelmekSzamaLabel = new System.Windows.Forms.Label();
+            this.FeherNevLabel = new System.Windows.Forms.Label();
+            this.FeketeGyozelmekSzamaLabel = new System.Windows.Forms.Label();
+            this.FeketeNevLabel = new System.Windows.Forms.Label();
             this.Tabla = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.PirosAmong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.KekAmong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FeherAmong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FeketeAmong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tabla)).BeginInit();
             this.SuspendLayout();
             // 
-            // PirosAmong
+            // FeherAmong
             // 
-            this.PirosAmong.Image = ((System.Drawing.Image)(resources.GetObject("PirosAmong.Image")));
-            this.PirosAmong.Location = new System.Drawing.Point(12, 12);
-            this.PirosAmong.Name = "PirosAmong";
-            this.PirosAmong.Size = new System.Drawing.Size(180, 220);
-            this.PirosAmong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PirosAmong.TabIndex = 9;
-            this.PirosAmong.TabStop = false;
+            this.FeherAmong.Image = ((System.Drawing.Image)(resources.GetObject("FeherAmong.Image")));
+            this.FeherAmong.Location = new System.Drawing.Point(12, 12);
+            this.FeherAmong.Name = "FeherAmong";
+            this.FeherAmong.Size = new System.Drawing.Size(180, 254);
+            this.FeherAmong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.FeherAmong.TabIndex = 9;
+            this.FeherAmong.TabStop = false;
             // 
-            // PirosFeladas
+            // FeherFeladas
             // 
-            this.PirosFeladas.BackColor = System.Drawing.Color.CadetBlue;
-            this.PirosFeladas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.PirosFeladas.Font = new System.Drawing.Font("Yu Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.PirosFeladas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.PirosFeladas.Location = new System.Drawing.Point(27, 238);
-            this.PirosFeladas.Name = "PirosFeladas";
-            this.PirosFeladas.Size = new System.Drawing.Size(148, 45);
-            this.PirosFeladas.TabIndex = 10;
-            this.PirosFeladas.Text = "Feladás";
-            this.PirosFeladas.UseVisualStyleBackColor = false;
+            this.FeherFeladas.BackColor = System.Drawing.Color.CadetBlue;
+            this.FeherFeladas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FeherFeladas.Font = new System.Drawing.Font("Yu Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FeherFeladas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FeherFeladas.Location = new System.Drawing.Point(27, 272);
+            this.FeherFeladas.Name = "FeherFeladas";
+            this.FeherFeladas.Size = new System.Drawing.Size(148, 45);
+            this.FeherFeladas.TabIndex = 10;
+            this.FeherFeladas.Text = "Feladás";
+            this.FeherFeladas.UseVisualStyleBackColor = false;
             // 
-            // KekAmong
+            // FeketeAmong
             // 
-            this.KekAmong.Image = ((System.Drawing.Image)(resources.GetObject("KekAmong.Image")));
-            this.KekAmong.Location = new System.Drawing.Point(817, 12);
-            this.KekAmong.Name = "KekAmong";
-            this.KekAmong.Size = new System.Drawing.Size(180, 220);
-            this.KekAmong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.KekAmong.TabIndex = 11;
-            this.KekAmong.TabStop = false;
+            this.FeketeAmong.Image = ((System.Drawing.Image)(resources.GetObject("FeketeAmong.Image")));
+            this.FeketeAmong.Location = new System.Drawing.Point(817, 12);
+            this.FeketeAmong.Name = "FeketeAmong";
+            this.FeketeAmong.Size = new System.Drawing.Size(180, 254);
+            this.FeketeAmong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.FeketeAmong.TabIndex = 11;
+            this.FeketeAmong.TabStop = false;
             // 
-            // KekFeladas
+            // FeketeFeladas
             // 
-            this.KekFeladas.BackColor = System.Drawing.Color.CadetBlue;
-            this.KekFeladas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.KekFeladas.Font = new System.Drawing.Font("Yu Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.KekFeladas.Location = new System.Drawing.Point(834, 238);
-            this.KekFeladas.Name = "KekFeladas";
-            this.KekFeladas.Size = new System.Drawing.Size(148, 45);
-            this.KekFeladas.TabIndex = 12;
-            this.KekFeladas.Text = "Feladás";
-            this.KekFeladas.UseVisualStyleBackColor = false;
+            this.FeketeFeladas.BackColor = System.Drawing.Color.CadetBlue;
+            this.FeketeFeladas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.FeketeFeladas.Font = new System.Drawing.Font("Yu Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FeketeFeladas.Location = new System.Drawing.Point(838, 272);
+            this.FeketeFeladas.Name = "FeketeFeladas";
+            this.FeketeFeladas.Size = new System.Drawing.Size(148, 45);
+            this.FeketeFeladas.TabIndex = 12;
+            this.FeketeFeladas.Text = "Feladás";
+            this.FeketeFeladas.UseVisualStyleBackColor = false;
             // 
-            // PirosGyozelmekSzamaLabel
+            // FeherGyozelmekSzamaLabel
             // 
-            this.PirosGyozelmekSzamaLabel.AutoSize = true;
-            this.PirosGyozelmekSzamaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.PirosGyozelmekSzamaLabel.Location = new System.Drawing.Point(7, 289);
-            this.PirosGyozelmekSzamaLabel.MinimumSize = new System.Drawing.Size(180, 30);
-            this.PirosGyozelmekSzamaLabel.Name = "PirosGyozelmekSzamaLabel";
-            this.PirosGyozelmekSzamaLabel.Size = new System.Drawing.Size(180, 30);
-            this.PirosGyozelmekSzamaLabel.TabIndex = 14;
+            this.FeherGyozelmekSzamaLabel.AutoSize = true;
+            this.FeherGyozelmekSzamaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FeherGyozelmekSzamaLabel.Location = new System.Drawing.Point(12, 323);
+            this.FeherGyozelmekSzamaLabel.MinimumSize = new System.Drawing.Size(180, 30);
+            this.FeherGyozelmekSzamaLabel.Name = "FeherGyozelmekSzamaLabel";
+            this.FeherGyozelmekSzamaLabel.Size = new System.Drawing.Size(180, 30);
+            this.FeherGyozelmekSzamaLabel.TabIndex = 14;
             // 
-            // PirosNevLabel
+            // FeherNevLabel
             // 
-            this.PirosNevLabel.AutoSize = true;
-            this.PirosNevLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.PirosNevLabel.Location = new System.Drawing.Point(7, 336);
-            this.PirosNevLabel.MinimumSize = new System.Drawing.Size(180, 30);
-            this.PirosNevLabel.Name = "PirosNevLabel";
-            this.PirosNevLabel.Size = new System.Drawing.Size(180, 30);
-            this.PirosNevLabel.TabIndex = 13;
+            this.FeherNevLabel.AutoSize = true;
+            this.FeherNevLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FeherNevLabel.Location = new System.Drawing.Point(12, 370);
+            this.FeherNevLabel.MinimumSize = new System.Drawing.Size(180, 30);
+            this.FeherNevLabel.Name = "FeherNevLabel";
+            this.FeherNevLabel.Size = new System.Drawing.Size(180, 30);
+            this.FeherNevLabel.TabIndex = 13;
             // 
-            // KekGyozelmekSzamaLabel
+            // FeketeGyozelmekSzamaLabel
             // 
-            this.KekGyozelmekSzamaLabel.AutoSize = true;
-            this.KekGyozelmekSzamaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.KekGyozelmekSzamaLabel.Location = new System.Drawing.Point(817, 289);
-            this.KekGyozelmekSzamaLabel.MinimumSize = new System.Drawing.Size(180, 30);
-            this.KekGyozelmekSzamaLabel.Name = "KekGyozelmekSzamaLabel";
-            this.KekGyozelmekSzamaLabel.Size = new System.Drawing.Size(180, 30);
-            this.KekGyozelmekSzamaLabel.TabIndex = 16;
+            this.FeketeGyozelmekSzamaLabel.AutoSize = true;
+            this.FeketeGyozelmekSzamaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FeketeGyozelmekSzamaLabel.Location = new System.Drawing.Point(819, 323);
+            this.FeketeGyozelmekSzamaLabel.MinimumSize = new System.Drawing.Size(180, 30);
+            this.FeketeGyozelmekSzamaLabel.Name = "FeketeGyozelmekSzamaLabel";
+            this.FeketeGyozelmekSzamaLabel.Size = new System.Drawing.Size(180, 30);
+            this.FeketeGyozelmekSzamaLabel.TabIndex = 16;
             // 
-            // KekNevLabel
+            // FeketeNevLabel
             // 
-            this.KekNevLabel.AutoSize = true;
-            this.KekNevLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.KekNevLabel.Location = new System.Drawing.Point(817, 336);
-            this.KekNevLabel.MinimumSize = new System.Drawing.Size(180, 30);
-            this.KekNevLabel.Name = "KekNevLabel";
-            this.KekNevLabel.Size = new System.Drawing.Size(180, 30);
-            this.KekNevLabel.TabIndex = 15;
+            this.FeketeNevLabel.AutoSize = true;
+            this.FeketeNevLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FeketeNevLabel.Location = new System.Drawing.Point(819, 370);
+            this.FeketeNevLabel.MinimumSize = new System.Drawing.Size(180, 30);
+            this.FeketeNevLabel.Name = "FeketeNevLabel";
+            this.FeketeNevLabel.Size = new System.Drawing.Size(180, 30);
+            this.FeketeNevLabel.TabIndex = 15;
             // 
             // Tabla
             // 
@@ -143,22 +143,23 @@ namespace MalomGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1009, 616);
             this.Controls.Add(this.Tabla);
-            this.Controls.Add(this.KekGyozelmekSzamaLabel);
-            this.Controls.Add(this.KekNevLabel);
-            this.Controls.Add(this.PirosGyozelmekSzamaLabel);
-            this.Controls.Add(this.PirosNevLabel);
-            this.Controls.Add(this.KekFeladas);
-            this.Controls.Add(this.KekAmong);
-            this.Controls.Add(this.PirosFeladas);
-            this.Controls.Add(this.PirosAmong);
+            this.Controls.Add(this.FeketeGyozelmekSzamaLabel);
+            this.Controls.Add(this.FeketeNevLabel);
+            this.Controls.Add(this.FeherGyozelmekSzamaLabel);
+            this.Controls.Add(this.FeherNevLabel);
+            this.Controls.Add(this.FeketeFeladas);
+            this.Controls.Add(this.FeketeAmong);
+            this.Controls.Add(this.FeherFeladas);
+            this.Controls.Add(this.FeherAmong);
             this.MaximumSize = new System.Drawing.Size(1025, 655);
             this.MinimumSize = new System.Drawing.Size(1025, 655);
             this.Name = "Jatekter";
             this.Text = "Jatekter";
-            ((System.ComponentModel.ISupportInitialize)(this.PirosAmong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.KekAmong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FeherAmong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FeketeAmong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tabla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -167,14 +168,14 @@ namespace MalomGame
 
         #endregion
 
-        private System.Windows.Forms.PictureBox PirosAmong;
-        private System.Windows.Forms.Button PirosFeladas;
-        private System.Windows.Forms.PictureBox KekAmong;
-        private System.Windows.Forms.Button KekFeladas;
-        private System.Windows.Forms.Label PirosGyozelmekSzamaLabel;
-        private System.Windows.Forms.Label PirosNevLabel;
-        private System.Windows.Forms.Label KekGyozelmekSzamaLabel;
-        private System.Windows.Forms.Label KekNevLabel;
+        private System.Windows.Forms.PictureBox FeherAmong;
+        private System.Windows.Forms.Button FeherFeladas;
+        private System.Windows.Forms.PictureBox FeketeAmong;
+        private System.Windows.Forms.Button FeketeFeladas;
+        private System.Windows.Forms.Label FeherGyozelmekSzamaLabel;
+        private System.Windows.Forms.Label FeherNevLabel;
+        private System.Windows.Forms.Label FeketeGyozelmekSzamaLabel;
+        private System.Windows.Forms.Label FeketeNevLabel;
         private System.Windows.Forms.PictureBox Tabla;
     }
 }
