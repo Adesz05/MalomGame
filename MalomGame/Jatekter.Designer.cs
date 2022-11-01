@@ -56,16 +56,17 @@ namespace MalomGame
             // 
             // FeherFeladas
             // 
-            this.FeherFeladas.BackColor = System.Drawing.Color.CadetBlue;
+            this.FeherFeladas.BackColor = System.Drawing.Color.SaddleBrown;
             this.FeherFeladas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FeherFeladas.Font = new System.Drawing.Font("Yu Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FeherFeladas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.FeherFeladas.Location = new System.Drawing.Point(27, 272);
+            this.FeherFeladas.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FeherFeladas.ForeColor = System.Drawing.Color.LightSalmon;
+            this.FeherFeladas.Location = new System.Drawing.Point(27, 275);
             this.FeherFeladas.Name = "FeherFeladas";
             this.FeherFeladas.Size = new System.Drawing.Size(148, 45);
             this.FeherFeladas.TabIndex = 10;
             this.FeherFeladas.Text = "Feladás";
             this.FeherFeladas.UseVisualStyleBackColor = false;
+            this.FeherFeladas.Click += new System.EventHandler(this.FeherFeladas_Click);
             // 
             // FeketeAmong
             // 
@@ -79,10 +80,11 @@ namespace MalomGame
             // 
             // FeketeFeladas
             // 
-            this.FeketeFeladas.BackColor = System.Drawing.Color.CadetBlue;
+            this.FeketeFeladas.BackColor = System.Drawing.Color.SaddleBrown;
             this.FeketeFeladas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.FeketeFeladas.Font = new System.Drawing.Font("Yu Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FeketeFeladas.Location = new System.Drawing.Point(838, 272);
+            this.FeketeFeladas.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FeketeFeladas.ForeColor = System.Drawing.Color.LightSalmon;
+            this.FeketeFeladas.Location = new System.Drawing.Point(835, 275);
             this.FeketeFeladas.Name = "FeketeFeladas";
             this.FeketeFeladas.Size = new System.Drawing.Size(148, 45);
             this.FeketeFeladas.TabIndex = 12;
@@ -143,7 +145,7 @@ namespace MalomGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1009, 616);
             this.Controls.Add(this.FeketeGyozelmekSzamaLabel);
             this.Controls.Add(this.FeketeNevLabel);

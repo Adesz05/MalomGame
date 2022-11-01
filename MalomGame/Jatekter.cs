@@ -93,7 +93,13 @@ namespace MalomGame
             PictureBox klikkelt=sender as PictureBox;
             int sor = Convert.ToInt32(klikkelt.Name.Split('_')[0]);
             int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[1]);
+
             MessageBox.Show(sor.ToString() + " "+ oszlop.ToString());
+        }
+
+        private void FeherFeladas_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
