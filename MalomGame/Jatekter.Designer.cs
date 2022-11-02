@@ -47,7 +47,7 @@ namespace MalomGame
             // FeherAmong
             // 
             this.FeherAmong.Image = ((System.Drawing.Image)(resources.GetObject("FeherAmong.Image")));
-            this.FeherAmong.Location = new System.Drawing.Point(34, 12);
+            this.FeherAmong.Location = new System.Drawing.Point(39, 51);
             this.FeherAmong.Name = "FeherAmong";
             this.FeherAmong.Size = new System.Drawing.Size(180, 254);
             this.FeherAmong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -60,7 +60,7 @@ namespace MalomGame
             this.FeherFeladas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.FeherFeladas.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FeherFeladas.ForeColor = System.Drawing.Color.LightSalmon;
-            this.FeherFeladas.Location = new System.Drawing.Point(44, 275);
+            this.FeherFeladas.Location = new System.Drawing.Point(49, 314);
             this.FeherFeladas.Name = "FeherFeladas";
             this.FeherFeladas.Size = new System.Drawing.Size(148, 45);
             this.FeherFeladas.TabIndex = 10;
@@ -71,7 +71,7 @@ namespace MalomGame
             // FeketeAmong
             // 
             this.FeketeAmong.Image = ((System.Drawing.Image)(resources.GetObject("FeketeAmong.Image")));
-            this.FeketeAmong.Location = new System.Drawing.Point(803, 12);
+            this.FeketeAmong.Location = new System.Drawing.Point(803, 51);
             this.FeketeAmong.Name = "FeketeAmong";
             this.FeketeAmong.Size = new System.Drawing.Size(180, 254);
             this.FeketeAmong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -84,7 +84,7 @@ namespace MalomGame
             this.FeketeFeladas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.FeketeFeladas.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FeketeFeladas.ForeColor = System.Drawing.Color.LightSalmon;
-            this.FeketeFeladas.Location = new System.Drawing.Point(822, 275);
+            this.FeketeFeladas.Location = new System.Drawing.Point(822, 314);
             this.FeketeFeladas.Name = "FeketeFeladas";
             this.FeketeFeladas.Size = new System.Drawing.Size(148, 45);
             this.FeketeFeladas.TabIndex = 12;
@@ -96,7 +96,7 @@ namespace MalomGame
             // 
             this.FeherGyozelmekSzamaLabel.AutoSize = true;
             this.FeherGyozelmekSzamaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FeherGyozelmekSzamaLabel.Location = new System.Drawing.Point(12, 323);
+            this.FeherGyozelmekSzamaLabel.Location = new System.Drawing.Point(39, 511);
             this.FeherGyozelmekSzamaLabel.MinimumSize = new System.Drawing.Size(180, 30);
             this.FeherGyozelmekSzamaLabel.Name = "FeherGyozelmekSzamaLabel";
             this.FeherGyozelmekSzamaLabel.Size = new System.Drawing.Size(180, 30);
@@ -106,7 +106,7 @@ namespace MalomGame
             // 
             this.FeketeGyozelmekSzamaLabel.AutoSize = true;
             this.FeketeGyozelmekSzamaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FeketeGyozelmekSzamaLabel.Location = new System.Drawing.Point(817, 428);
+            this.FeketeGyozelmekSzamaLabel.Location = new System.Drawing.Point(803, 511);
             this.FeketeGyozelmekSzamaLabel.MinimumSize = new System.Drawing.Size(180, 30);
             this.FeketeGyozelmekSzamaLabel.Name = "FeketeGyozelmekSzamaLabel";
             this.FeketeGyozelmekSzamaLabel.Size = new System.Drawing.Size(180, 30);
@@ -121,12 +121,13 @@ namespace MalomGame
             this.Tabla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Tabla.TabIndex = 17;
             this.Tabla.TabStop = false;
+            this.Tabla.Click += new System.EventHandler(this.Klikkeles);
             // 
             // FeherLBL
             // 
             this.FeherLBL.AutoSize = true;
             this.FeherLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FeherLBL.Location = new System.Drawing.Point(29, 351);
+            this.FeherLBL.Location = new System.Drawing.Point(34, 390);
             this.FeherLBL.MinimumSize = new System.Drawing.Size(180, 30);
             this.FeherLBL.Name = "FeherLBL";
             this.FeherLBL.Size = new System.Drawing.Size(180, 30);
@@ -136,7 +137,7 @@ namespace MalomGame
             // 
             this.FeketeLBL.AutoSize = true;
             this.FeketeLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FeketeLBL.Location = new System.Drawing.Point(803, 351);
+            this.FeketeLBL.Location = new System.Drawing.Point(803, 390);
             this.FeketeLBL.MinimumSize = new System.Drawing.Size(180, 30);
             this.FeketeLBL.Name = "FeketeLBL";
             this.FeketeLBL.Size = new System.Drawing.Size(180, 30);

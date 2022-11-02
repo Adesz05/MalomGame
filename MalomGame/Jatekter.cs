@@ -17,13 +17,17 @@ namespace MalomGame
         static Player player1;
         static Player player2;
         static int kikezd = 0;
+        static bool elsolefutas = true;
         public Jatekter(string Player1, string Player2)
         {
             InitializeComponent();
-            MatrixGeneralas();
-            Randomkezdes();
+            if (elsolefutas)
+            {
+                MatrixGeneralas();
+                Randomkezdes();
+                elsolefutas = false;
+            }
             Nevek(Player1, Player2);
-            
         }
 
         private void Randomkezdes()
