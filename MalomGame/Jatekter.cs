@@ -139,7 +139,7 @@ namespace MalomGame
             //matrix[i, j].Image = Image.FromFile(@"feketekorong.png");
             //matrix[i, j].Visible = false;
             //matrix[i, j].BorderStyle = BorderStyle.Fixed3D;
-            matrix[i,j].BackColor = Color.Transparent;
+            matrix[i, j].BackColor = Color.FromArgb(0, 0, 0, 50);
             matrix[i, j].SizeMode = PictureBoxSizeMode.StretchImage;
             matrix[i, j].Click += new EventHandler(Klikkeles);
         }
@@ -150,6 +150,8 @@ namespace MalomGame
             PictureBox klikkelt=sender as PictureBox;
             int sor = Convert.ToInt32(klikkelt.Name.Split('_')[0]);
             int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[1]);
+
+
 
             MessageBox.Show(sor.ToString() + " "+ oszlop.ToString());
         }
