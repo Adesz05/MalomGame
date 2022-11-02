@@ -19,5 +19,6 @@ namespace MalomGame
             TablanLevoKorongokSzama = tablanlevo;
             NemTablanLevoKorongokSzama = nemtablanlevo;
         }
+       
     }
 }

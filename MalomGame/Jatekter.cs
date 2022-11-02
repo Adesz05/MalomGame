@@ -14,12 +14,64 @@ namespace MalomGame
     {
         static int meret = 9;
         static PictureBox[,] matrix = new PictureBox[meret, meret];
-        public Jatekter(string player1, string player2)
+        static Player player1;
+        static Player player2;
+        static int kikezd = 0;
+        public Jatekter(string Player1, string Player2)
         {
-            MatrixGeneralas();
             InitializeComponent();
-
+            MatrixGeneralas();
+            Randomkezdes();
+            Nevek(Player1, Player2);
+            
         }
+
+        private void Randomkezdes()
+        {
+            Random r = new Random();
+            int r1 = r.Next(1, 3);
+            if (r1 == 1)
+            {
+                kikezd = 1;
+            }
+            else
+            {
+                kikezd = 2;
+            }
+        }
+
+        private void Nevek(string Player1, string Player2)
+        {
+            if (kikezd == 1)
+            {
+                player1 = new Player(Player1, "fehér", 0, 0, 9);
+                player2 = new Player(Player2, "fekete", 0, 0, 9);
+
+                FeherLBL.Text = player1.Nev;
+                FeketeLBL.Text = player2.Nev;
+
+                NevekLblSzepites();
+            }
+            else
+            {
+                player2 = new Player(Player2, "fehér", 0, 0, 9);
+                player1 = new Player(Player1, "fekete", 0, 0, 9);
+
+                FeherLBL.Text = player2.Nev;
+                FeketeLBL.Text = player1.Nev;
+
+                NevekLblSzepites();
+            }
+        }
+
+        private void NevekLblSzepites()
+        {
+            FeherLBL.TextAlign = ContentAlignment.MiddleCenter;
+            FeherLBL.TextAlign = ContentAlignment.MiddleCenter;
+            FeketeLBL.TextAlign = ContentAlignment.MiddleCenter;
+            FeketeLBL.TextAlign = ContentAlignment.MiddleCenter;
+        }
+
         private void MatrixGeneralas()
         {
             for (int i = 0; i < meret; i++)
@@ -88,6 +140,7 @@ namespace MalomGame
             matrix[i, j].Click += new EventHandler(Klikkeles);
         }
 
+        
         private void Klikkeles(object sender, EventArgs e)
         {
             PictureBox klikkelt=sender as PictureBox;
@@ -99,7 +152,54 @@ namespace MalomGame
 
         private void FeherFeladas_Click(object sender, EventArgs e)
         {
-
+            if (player1.MelyikSzin == "fehér")
+            {
+                player2.Pontszam += 1;
+                DialogResult valasz = MessageBox.Show(player2.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                TovabbJatszik(valasz);
+            }
+            else
+            {
+                player1.Pontszam += 1;
+                
+                DialogResult valasz = MessageBox.Show(player1.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                TovabbJatszik(valasz);
+            }
         }
-    }
+
+        private void FeketeFeladas_Click(object sender, EventArgs e)
+        {
+            if (player1.MelyikSzin == "fekete")
+            {
+                player2.Pontszam += 1;
+
+                DialogResult valasz = MessageBox.Show(player2.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                TovabbJatszik(valasz);
+            }
+            else
+            {
+                player1.Pontszam += 1;
+
+                DialogResult valasz = MessageBox.Show(player1.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                TovabbJatszik(valasz);
+            }
+        }
+
+        private void TovabbJatszik(DialogResult valasz)
+        {
+            if (valasz == DialogResult.Yes)
+            {
+                //értékek, játékosok csere megadása még !!!
+               
+                Jatekter jatekter = new Jatekter(player1.Nev, player2.Nev);
+                this.Visible = false;
+                jatekter.ShowDialog();
+                Close();
+            }
+            else
+            {
+                Close();
+            }
+        }
+        }
 }
