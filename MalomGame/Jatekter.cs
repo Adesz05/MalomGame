@@ -136,10 +136,6 @@ namespace MalomGame
             matrix[i, j].Name = i + "_" + j;
             matrix[i, j].Size = new Size(40, 40);
             matrix[i, j].Location = new Point(0 + 50 * j + j*10, 0 + 50 * i + i*10);
-            //matrix[i, j].BorderStyle = BorderStyle.FixedSingle;
-            //matrix[i, j].Image = Image.FromFile(@"feketekorong.png");
-            //matrix[i, j].Visible = false;
-            //matrix[i, j].BorderStyle = BorderStyle.Fixed3D;
             matrix[i, j].BackColor = Color.FromArgb(0, 0, 0, 50);
             matrix[i, j].SizeMode = PictureBoxSizeMode.StretchImage;
             matrix[i, j].Click += new EventHandler(Klikkeles);
