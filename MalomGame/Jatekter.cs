@@ -134,13 +134,13 @@ namespace MalomGame
             matrix[i, j] = new PictureBox();
             matrix[i, j].Parent = Tabla;
             matrix[i, j].Name = i + "_" + j;
-            matrix[i, j].Size = new Size(42, 42);
+            matrix[i, j].Size = new Size(40, 40);
             matrix[i, j].Location = new Point(0 + 50 * j + j*10, 0 + 50 * i + i*10);
             //matrix[i, j].BorderStyle = BorderStyle.FixedSingle;
             //matrix[i, j].Image = Image.FromFile(@"feketekorong.png");
             //matrix[i, j].Visible = false;
             //matrix[i, j].BorderStyle = BorderStyle.Fixed3D;
-            matrix[i, j].BackColor = Color.FromArgb(200, 0, 0, 50);
+            matrix[i, j].BackColor = Color.FromArgb(0, 0, 0, 50);
             matrix[i, j].SizeMode = PictureBoxSizeMode.StretchImage;
             matrix[i, j].Click += new EventHandler(Klikkeles);
         }
@@ -158,19 +158,39 @@ namespace MalomGame
 
         private void FeketevFeher(int sor, int oszlop)
         {
-      
-            if (kiJon == 0)
-            {
-                matrix[sor, oszlop].BackColor = Color.Black;
-                kiJon = 1;
-            }
-            else
-            {
-                matrix[sor, oszlop].BackColor = Color.Blue;
-                kiJon = 0;
-            }
+                if (kiJon == 0)
+                {
+                    matrix[sor, oszlop].BackColor = Color.Black;
+                    Ellenorzes(sor, oszlop);
+                    kiJon = 1;
+                }
+                else
+                {
+                    matrix[sor, oszlop].BackColor = Color.Blue;
+                    Ellenorzes(sor, oszlop);
+                    kiJon = 0;
+                }
+            
+                // NAGYON SOK ELLENŐRZÉS MÉG
         }
 
+        private void Ellenorzes(int sor, int oszlop)
+        {
+            if (player1.TablanLevoKorongokSzama + player1.NemTablanLevoKorongokSzama < 3)
+            {
+                player2.Pontszam += 1;
+                DialogResult valasz = MessageBox.Show(player2.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                TovabbJatszik(valasz);
+            }
+            if (player2.TablanLevoKorongokSzama + player2.NemTablanLevoKorongokSzama < 3)
+            {
+                player1.Pontszam += 1;
+                DialogResult valasz = MessageBox.Show(player1.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                TovabbJatszik(valasz);
+            }
+
+            // ITT IS MÉG SOK ELLENŐRZÉS
+        }
         private void FeherFeladas_Click(object sender, EventArgs e)
         {
             if (player1.MelyikSzin == "fehér")
