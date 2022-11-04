@@ -115,9 +115,9 @@ namespace MalomGame
             // Tabla
             // 
             this.Tabla.Image = ((System.Drawing.Image)(resources.GetObject("Tabla.Image")));
-            this.Tabla.Location = new System.Drawing.Point(273, 30);
+            this.Tabla.Location = new System.Drawing.Point(241, 51);
             this.Tabla.Name = "Tabla";
-            this.Tabla.Size = new System.Drawing.Size(481, 481);
+            this.Tabla.Size = new System.Drawing.Size(521, 520);
             this.Tabla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Tabla.TabIndex = 17;
             this.Tabla.TabStop = false;

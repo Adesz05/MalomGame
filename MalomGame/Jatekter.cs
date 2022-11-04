@@ -16,6 +16,7 @@ namespace MalomGame
         static PictureBox[,] matrix = new PictureBox[meret, meret];
         static Player player1;
         static Player player2;
+        static int kiJon = 0;
         static int kikezd = 0;
         static bool elsolefutas = true;
         public Jatekter(string Player1, string Player2)
@@ -133,13 +134,13 @@ namespace MalomGame
             matrix[i, j] = new PictureBox();
             matrix[i, j].Parent = Tabla;
             matrix[i, j].Name = i + "_" + j;
-            matrix[i, j].Size = new Size(33, 33);
-            matrix[i, j].Location = new Point(256 + 60 * j, 45 + 60 * i);
+            matrix[i, j].Size = new Size(42, 42);
+            matrix[i, j].Location = new Point(0 + 50 * j + j*10, 0 + 50 * i + i*10);
             //matrix[i, j].BorderStyle = BorderStyle.FixedSingle;
             //matrix[i, j].Image = Image.FromFile(@"feketekorong.png");
             //matrix[i, j].Visible = false;
             //matrix[i, j].BorderStyle = BorderStyle.Fixed3D;
-            matrix[i, j].BackColor = Color.FromArgb(0, 0, 0, 50);
+            matrix[i, j].BackColor = Color.FromArgb(200, 0, 0, 50);
             matrix[i, j].SizeMode = PictureBoxSizeMode.StretchImage;
             matrix[i, j].Click += new EventHandler(Klikkeles);
         }
@@ -150,10 +151,24 @@ namespace MalomGame
             PictureBox klikkelt=sender as PictureBox;
             int sor = Convert.ToInt32(klikkelt.Name.Split('_')[0]);
             int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[1]);
-
-
-
             MessageBox.Show(sor.ToString() + " "+ oszlop.ToString());
+
+            FeketevFeher(sor,oszlop);
+        }
+
+        private void FeketevFeher(int sor, int oszlop)
+        {
+      
+            if (kiJon == 0)
+            {
+                matrix[sor, oszlop].BackColor = Color.Black;
+                kiJon = 1;
+            }
+            else
+            {
+                matrix[sor, oszlop].BackColor = Color.Blue;
+                kiJon = 0;
+            }
         }
 
         private void FeherFeladas_Click(object sender, EventArgs e)
@@ -167,7 +182,6 @@ namespace MalomGame
             else
             {
                 player1.Pontszam += 1;
-                
                 DialogResult valasz = MessageBox.Show(player1.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 TovabbJatszik(valasz);
             }
@@ -178,14 +192,12 @@ namespace MalomGame
             if (player1.MelyikSzin == "fekete")
             {
                 player2.Pontszam += 1;
-
                 DialogResult valasz = MessageBox.Show(player2.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 TovabbJatszik(valasz);
             }
             else
             {
                 player1.Pontszam += 1;
-
                 DialogResult valasz = MessageBox.Show(player1.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 TovabbJatszik(valasz);
             }
