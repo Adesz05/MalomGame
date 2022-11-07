@@ -129,8 +129,6 @@ namespace MalomGame
                     {
                         IgaziMatrixGeneralas(i, j);
                     }
-                    
-
                 }
             }
             //Tabla.SendToBack();
@@ -173,6 +171,7 @@ namespace MalomGame
                     matrix[sor, oszlop].Kep.Image = Image.FromFile(@"feketekorong.png");
                     matrix[sor, oszlop].VaneRajta = true;
                     matrix[sor, oszlop].MelyikSzin = "fekete";
+                    
                     Ellenorzes(sor, oszlop);
                     kiJon = 1;
                 }
@@ -280,5 +279,5 @@ namespace MalomGame
                 Close();
             }
         }
-        }
+    }
 }
