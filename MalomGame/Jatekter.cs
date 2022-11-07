@@ -168,7 +168,7 @@ namespace MalomGame
                 }
                 else
                 {
-                    matrix[sor, oszlop].Image = Image.FromFile(@"feketekorong.png");
+                    matrix[sor, oszlop].Image = Image.FromFile(@"feherkorong.png");
                     Ellenorzes(sor, oszlop);
                     kiJon = 0;
                 }
