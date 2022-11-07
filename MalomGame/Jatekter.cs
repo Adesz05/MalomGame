@@ -28,7 +28,6 @@ namespace MalomGame
                 Randomkezdes(Player1, Player2);
                 elsolefutas = false;
             }
-            
         }
 
         private void Randomkezdes(string Player1, string Player2)
@@ -122,8 +121,6 @@ namespace MalomGame
                     {
                         IgaziMatrixGeneralas(i, j);
                     }
-                    
-
                 }
             }
             //Tabla.SendToBack();
