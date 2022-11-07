@@ -25,13 +25,13 @@ namespace MalomGame
             if (elsolefutas)
             {
                 MatrixGeneralas();
-                Randomkezdes();
+                Randomkezdes(Player1, Player2);
                 elsolefutas = false;
             }
-            Nevek(Player1, Player2);
+            
         }
 
-        private void Randomkezdes()
+        private void Randomkezdes(string Player1, string Player2)
         {
             Random r = new Random();
             int r1 = r.Next(1, 3);
@@ -43,8 +43,8 @@ namespace MalomGame
             {
                 kikezd = 2;
             }
+            Nevek(Player1, Player2);
         }
-
         private void Nevek(string Player1, string Player2)
         {
             if (kikezd == 1)
@@ -184,6 +184,7 @@ namespace MalomGame
         private void Ellenorzes(int sor, int oszlop)
         {
             ElfogytakAKorongok();
+
             if (player1.MelyikSzin == "fehér")
             {
                 FeherPontSzam.Text = "A pontszám: " + player1.Pontszam.ToString();
@@ -201,13 +202,13 @@ namespace MalomGame
         {
             if (player1.TablanLevoKorongokSzama + player1.NemTablanLevoKorongokSzama < 3)
             {
-                player2.Pontszam += 1;
+                player2.Pontszam ++;
                 DialogResult valasz = MessageBox.Show(player2.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 TovabbJatszik(valasz);
             }
             if (player2.TablanLevoKorongokSzama + player2.NemTablanLevoKorongokSzama < 3)
             {
-                player1.Pontszam += 1;
+                player1.Pontszam ++;
                 DialogResult valasz = MessageBox.Show(player1.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 TovabbJatszik(valasz);
             }
@@ -217,13 +218,15 @@ namespace MalomGame
         {
             if (player1.MelyikSzin == "fehér")
             {
-                player2.Pontszam += 1;
+                MessageBox.Show(player2.Pontszam.ToString());
+                MessageBox.Show(player1.Pontszam.ToString());
+                player2.Pontszam++;
                 DialogResult valasz = MessageBox.Show(player2.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 TovabbJatszik(valasz);
             }
             else
             {
-                player1.Pontszam += 1;
+                player1.Pontszam++;
                 DialogResult valasz = MessageBox.Show(player1.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 TovabbJatszik(valasz);
             }
@@ -233,13 +236,13 @@ namespace MalomGame
         {
             if (player1.MelyikSzin == "fekete")
             {
-                player2.Pontszam += 1;
+                player2.Pontszam ++;
                 DialogResult valasz = MessageBox.Show(player2.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 TovabbJatszik(valasz);
             }
             else
             {
-                player1.Pontszam += 1;
+                player1.Pontszam ++;
                 DialogResult valasz = MessageBox.Show(player1.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 TovabbJatszik(valasz);
             }
