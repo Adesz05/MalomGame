@@ -13,7 +13,7 @@ namespace MalomGame
     public partial class Jatekter : Form
     {
         static int meret = 9;
-        static PictureBox[,] matrix = new PictureBox[meret, meret];
+        static Korongok[,] matrix = new Korongok[meret, meret];
         static Player player1;
         static Player player2;
         static int kiJon = 0;
@@ -131,20 +131,21 @@ namespace MalomGame
 
         private void IgaziMatrixGeneralas(int i, int j)
         {
-            matrix[i, j] = new PictureBox();
-            matrix[i, j].Parent = this;
-            matrix[i, j].Name = i + "_" + j;
-            matrix[i, j].Size = new Size(41, 41);
-            matrix[i, j].Location = new Point(256 + 60 * j, 31 + 60 * i);
+            matrix[i, j].Kep = new PictureBox();
+            matrix[i, j].Nincsrajta();
+            matrix[i, j].Kep.Parent = this;
+            matrix[i, j].Kep.Name = i + "_" + j;
+            matrix[i, j].Kep.Size = new Size(41, 41);
+            matrix[i, j].Kep.Location = new Point(256 + 60 * j, 31 + 60 * i);
             //matrix[i, j].Location = new Point(60 * j,60 * i);
-            matrix[i, j].BackColor = Color.FromArgb(0, 0, 0, 50);
+            matrix[i, j].Kep.BackColor = Color.FromArgb(0, 0, 0, 50);
             //matrix[i, j].BackColor = Color.Black;
-            matrix[i, j].BringToFront();
+            matrix[i, j].Kep.BringToFront();
             //matrix[i, j].Visible = false;
             //this.Controls.Add(matrix[i, j]);
 
-            matrix[i, j].SizeMode = PictureBoxSizeMode.StretchImage;
-            matrix[i, j].Click += new EventHandler(Klikkeles);
+            matrix[i, j].Kep.SizeMode = PictureBoxSizeMode.StretchImage;
+            matrix[i, j].Kep.Click += new EventHandler(Klikkeles);
         }
 
         
@@ -162,13 +163,17 @@ namespace MalomGame
         {
                 if (kiJon == 0)
                 {
-                    matrix[sor, oszlop].Image = Image.FromFile(@"feketekorong.png");
+                    matrix[sor, oszlop].Kep.Image = Image.FromFile(@"feketekorong.png");
+                    matrix[sor, oszlop].VaneRajta = true;
+                    matrix[sor, oszlop].MelyikSzin = "fekete";
                     Ellenorzes(sor, oszlop);
                     kiJon = 1;
                 }
                 else
                 {
-                    matrix[sor, oszlop].Image = Image.FromFile(@"feketekorong.png");
+                    matrix[sor, oszlop].Kep.Image = Image.FromFile(@"feketekorong.png");
+                    matrix[sor, oszlop].VaneRajta = true;
+                    matrix[sor, oszlop].MelyikSzin = "fehér";
                     Ellenorzes(sor, oszlop);
                     kiJon = 0;
                 }
