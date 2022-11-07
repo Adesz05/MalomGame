@@ -172,6 +172,13 @@ namespace MalomGame
 
         private void Ellenorzes(int sor, int oszlop)
         {
+            ElfogytakAKorongok();
+
+
+            // ITT IS MÉG SOK ELLENŐRZÉS
+        }
+        private void ElfogytakAKorongok()
+        {
             if (player1.TablanLevoKorongokSzama + player1.NemTablanLevoKorongokSzama < 3)
             {
                 player2.Pontszam += 1;
@@ -184,9 +191,8 @@ namespace MalomGame
                 DialogResult valasz = MessageBox.Show(player1.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 TovabbJatszik(valasz);
             }
-
-            // ITT IS MÉG SOK ELLENŐRZÉS
         }
+
         private void FeherFeladas_Click(object sender, EventArgs e)
         {
             if (player1.MelyikSzin == "fehér")

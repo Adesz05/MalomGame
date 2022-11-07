@@ -75,11 +75,11 @@ namespace MalomGame
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(127, 125);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 31);
+            this.label1.Size = new System.Drawing.Size(265, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "Első játékos neve: ";
             // 
@@ -87,11 +87,10 @@ namespace MalomGame
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(94, 201);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(323, 31);
+            this.label2.Size = new System.Drawing.Size(321, 29);
             this.label2.TabIndex = 4;
             this.label2.Text = "Második játékos neve: ";
             // 
@@ -121,6 +120,8 @@ namespace MalomGame
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "Form1";
             this.Text = "MalomMenu";
             this.ResumeLayout(false);
