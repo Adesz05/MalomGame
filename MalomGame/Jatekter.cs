@@ -131,8 +131,8 @@ namespace MalomGame
 
         private void IgaziMatrixGeneralas(int i, int j)
         {
-            matrix[i, j].Kep = new PictureBox();
-            matrix[i, j].Nincsrajta();
+            matrix[i, j]=new Korongok(new PictureBox(),false,"üres");
+            //matrix[i, j].Nincsrajta();
             matrix[i, j].Kep.Parent = this;
             matrix[i, j].Kep.Name = i + "_" + j;
             matrix[i, j].Kep.Size = new Size(41, 41);
