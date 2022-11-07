@@ -171,7 +171,7 @@ namespace MalomGame
                 }
                 else
                 {
-                    matrix[sor, oszlop].Kep.Image = Image.FromFile(@"feketekorong.png");
+                    matrix[sor, oszlop].Kep.Image = Image.FromFile(@"feherkorong.png");
                     matrix[sor, oszlop].VaneRajta = true;
                     matrix[sor, oszlop].MelyikSzin = "fehér";
                     Ellenorzes(sor, oszlop);
