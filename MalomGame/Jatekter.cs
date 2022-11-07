@@ -136,13 +136,8 @@ namespace MalomGame
             matrix[i, j].Name = i + "_" + j;
             matrix[i, j].Size = new Size(41, 41);
             matrix[i, j].Location = new Point(256 + 60 * j, 31 + 60 * i);
-            //matrix[i, j].Location = new Point(60 * j,60 * i);
             matrix[i, j].BackColor = Color.FromArgb(0, 0, 0, 50);
-            //matrix[i, j].BackColor = Color.Black;
             matrix[i, j].BringToFront();
-            //matrix[i, j].Visible = false;
-            //this.Controls.Add(matrix[i, j]);
-
             matrix[i, j].SizeMode = PictureBoxSizeMode.StretchImage;
             matrix[i, j].Click += new EventHandler(Klikkeles);
         }
@@ -179,7 +174,16 @@ namespace MalomGame
         private void Ellenorzes(int sor, int oszlop)
         {
             ElfogytakAKorongok();
-
+            if (player1.MelyikSzin == "fehér")
+            {
+                FeherPontSzam.Text = "A pontszám: " + player1.Pontszam.ToString();
+                FeketePontszam.Text = "A pontszám: " + player2.Pontszam.ToString();
+            }
+            else
+            {
+                FeherPontSzam.Text = "A pontszám: " + player2.Pontszam.ToString();
+                FeketePontszam.Text = player1.Pontszam.ToString();
+            }
 
             // ITT IS MÉG SOK ELLENŐRZÉS
         }
