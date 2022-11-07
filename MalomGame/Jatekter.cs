@@ -192,7 +192,7 @@ namespace MalomGame
             else
             {
                 FeherPontSzam.Text = "A pontszám: " + player2.Pontszam.ToString();
-                FeketePontszam.Text = player1.Pontszam.ToString();
+                FeketePontszam.Text ="A pontszám: "  + player1.Pontszam.ToString();
             }
 
             // ITT IS MÉG SOK ELLENŐRZÉS

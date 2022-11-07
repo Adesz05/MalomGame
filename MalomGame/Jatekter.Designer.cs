@@ -96,21 +96,23 @@ namespace MalomGame
             // 
             this.FeherPontSzam.AutoSize = true;
             this.FeherPontSzam.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FeherPontSzam.Location = new System.Drawing.Point(39, 511);
+            this.FeherPontSzam.Location = new System.Drawing.Point(39, 420);
             this.FeherPontSzam.MinimumSize = new System.Drawing.Size(180, 30);
             this.FeherPontSzam.Name = "FeherPontSzam";
             this.FeherPontSzam.Size = new System.Drawing.Size(180, 30);
             this.FeherPontSzam.TabIndex = 14;
+            this.FeherPontSzam.Text = "A pontszám: 0";
             // 
             // FeketePontszam
             // 
             this.FeketePontszam.AutoSize = true;
             this.FeketePontszam.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FeketePontszam.Location = new System.Drawing.Point(803, 511);
+            this.FeketePontszam.Location = new System.Drawing.Point(798, 420);
             this.FeketePontszam.MinimumSize = new System.Drawing.Size(180, 30);
             this.FeketePontszam.Name = "FeketePontszam";
             this.FeketePontszam.Size = new System.Drawing.Size(180, 30);
             this.FeketePontszam.TabIndex = 16;
+            this.FeketePontszam.Text = "A pontszám: 0";
             // 
             // Tabla
             // 
