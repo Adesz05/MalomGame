@@ -132,11 +132,17 @@ namespace MalomGame
         private void IgaziMatrixGeneralas(int i, int j)
         {
             matrix[i, j] = new PictureBox();
-            matrix[i, j].Parent = Tabla;
+            //matrix[i, j].Parent = this;
             matrix[i, j].Name = i + "_" + j;
-            matrix[i, j].Size = new Size(40, 40);
-            matrix[i, j].Location = new Point(0 + 50 * j + j*10, 0 + 50 * i + i*10);
+            matrix[i, j].Size = new Size(41, 41);
+            matrix[i, j].Location = new Point(256 + 60 * j, 31 + 60 * i);
+            //matrix[i, j].Location = new Point(60 * j,60 * i);
             matrix[i, j].BackColor = Color.FromArgb(0, 0, 0, 50);
+            //matrix[i, j].BackColor = Color.Black;
+            matrix[i, j].BringToFront();
+            //matrix[i, j].Visible = false;
+            this.Controls.Add(matrix[i, j]);
+
             matrix[i, j].SizeMode = PictureBoxSizeMode.StretchImage;
             matrix[i, j].Click += new EventHandler(Klikkeles);
         }
@@ -147,7 +153,7 @@ namespace MalomGame
             PictureBox klikkelt=sender as PictureBox;
             int sor = Convert.ToInt32(klikkelt.Name.Split('_')[0]);
             int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[1]);
-            MessageBox.Show(sor.ToString() + " "+ oszlop.ToString());
+            //MessageBox.Show(sor.ToString() + " "+ oszlop.ToString());
 
             FeketevFeher(sor,oszlop);
         }
@@ -156,13 +162,15 @@ namespace MalomGame
         {
                 if (kiJon == 0)
                 {
-                    matrix[sor, oszlop].BackColor = Color.Black;
+                    matrix[sor, oszlop].Image = Image.FromFile(@"feketekorong.png");
+                    //matrix[sor, oszlop].BackColor = Color.Black;
                     Ellenorzes(sor, oszlop);
                     kiJon = 1;
                 }
                 else
                 {
-                    matrix[sor, oszlop].BackColor = Color.Blue;
+                    matrix[sor, oszlop].Image = Image.FromFile(@"feketekorong.png");
+                    //matrix[sor, oszlop].BackColor = Color.Blue;
                     Ellenorzes(sor, oszlop);
                     kiJon = 0;
                 }
