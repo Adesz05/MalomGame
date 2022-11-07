@@ -163,14 +163,12 @@ namespace MalomGame
                 if (kiJon == 0)
                 {
                     matrix[sor, oszlop].Image = Image.FromFile(@"feketekorong.png");
-                    //matrix[sor, oszlop].BackColor = Color.Black;
                     Ellenorzes(sor, oszlop);
                     kiJon = 1;
                 }
                 else
                 {
-                    matrix[sor, oszlop].Image = Image.FromFile(@"feherkorong.png");
-                    //matrix[sor, oszlop].BackColor = Color.Blue;
+                    matrix[sor, oszlop].Image = Image.FromFile(@"feketekorong.png");
                     Ellenorzes(sor, oszlop);
                     kiJon = 0;
                 }
@@ -179,6 +177,13 @@ namespace MalomGame
         }
 
         private void Ellenorzes(int sor, int oszlop)
+        {
+            ElfogytakAKorongok();
+
+
+            // ITT IS MÉG SOK ELLENŐRZÉS
+        }
+        private void ElfogytakAKorongok()
         {
             if (player1.TablanLevoKorongokSzama + player1.NemTablanLevoKorongokSzama < 3)
             {
@@ -192,9 +197,8 @@ namespace MalomGame
                 DialogResult valasz = MessageBox.Show(player1.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 TovabbJatszik(valasz);
             }
-
-            // ITT IS MÉG SOK ELLENŐRZÉS
         }
+
         private void FeherFeladas_Click(object sender, EventArgs e)
         {
             if (player1.MelyikSzin == "fehér")

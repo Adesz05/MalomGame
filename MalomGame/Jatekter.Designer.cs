@@ -34,8 +34,8 @@ namespace MalomGame
             this.FeherFeladas = new System.Windows.Forms.Button();
             this.FeketeAmong = new System.Windows.Forms.PictureBox();
             this.FeketeFeladas = new System.Windows.Forms.Button();
-            this.FeherGyozelmekSzamaLabel = new System.Windows.Forms.Label();
-            this.FeketeGyozelmekSzamaLabel = new System.Windows.Forms.Label();
+            this.FeherPontSzam = new System.Windows.Forms.Label();
+            this.FeketePontszam = new System.Windows.Forms.Label();
             this.Tabla = new System.Windows.Forms.PictureBox();
             this.FeherLBL = new System.Windows.Forms.Label();
             this.FeketeLBL = new System.Windows.Forms.Label();
@@ -92,25 +92,25 @@ namespace MalomGame
             this.FeketeFeladas.UseVisualStyleBackColor = false;
             this.FeketeFeladas.Click += new System.EventHandler(this.FeketeFeladas_Click);
             // 
-            // FeherGyozelmekSzamaLabel
+            // FeherPontSzam
             // 
-            this.FeherGyozelmekSzamaLabel.AutoSize = true;
-            this.FeherGyozelmekSzamaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FeherGyozelmekSzamaLabel.Location = new System.Drawing.Point(39, 511);
-            this.FeherGyozelmekSzamaLabel.MinimumSize = new System.Drawing.Size(180, 30);
-            this.FeherGyozelmekSzamaLabel.Name = "FeherGyozelmekSzamaLabel";
-            this.FeherGyozelmekSzamaLabel.Size = new System.Drawing.Size(180, 30);
-            this.FeherGyozelmekSzamaLabel.TabIndex = 14;
+            this.FeherPontSzam.AutoSize = true;
+            this.FeherPontSzam.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FeherPontSzam.Location = new System.Drawing.Point(39, 511);
+            this.FeherPontSzam.MinimumSize = new System.Drawing.Size(180, 30);
+            this.FeherPontSzam.Name = "FeherPontSzam";
+            this.FeherPontSzam.Size = new System.Drawing.Size(180, 30);
+            this.FeherPontSzam.TabIndex = 14;
             // 
-            // FeketeGyozelmekSzamaLabel
+            // FeketePontszam
             // 
-            this.FeketeGyozelmekSzamaLabel.AutoSize = true;
-            this.FeketeGyozelmekSzamaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FeketeGyozelmekSzamaLabel.Location = new System.Drawing.Point(803, 511);
-            this.FeketeGyozelmekSzamaLabel.MinimumSize = new System.Drawing.Size(180, 30);
-            this.FeketeGyozelmekSzamaLabel.Name = "FeketeGyozelmekSzamaLabel";
-            this.FeketeGyozelmekSzamaLabel.Size = new System.Drawing.Size(180, 30);
-            this.FeketeGyozelmekSzamaLabel.TabIndex = 16;
+            this.FeketePontszam.AutoSize = true;
+            this.FeketePontszam.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FeketePontszam.Location = new System.Drawing.Point(803, 511);
+            this.FeketePontszam.MinimumSize = new System.Drawing.Size(180, 30);
+            this.FeketePontszam.Name = "FeketePontszam";
+            this.FeketePontszam.Size = new System.Drawing.Size(180, 30);
+            this.FeketePontszam.TabIndex = 16;
             // 
             // Tabla
             // 
@@ -150,8 +150,8 @@ namespace MalomGame
             this.ClientSize = new System.Drawing.Size(1009, 616);
             this.Controls.Add(this.FeketeLBL);
             this.Controls.Add(this.FeherLBL);
-            this.Controls.Add(this.FeketeGyozelmekSzamaLabel);
-            this.Controls.Add(this.FeherGyozelmekSzamaLabel);
+            this.Controls.Add(this.FeketePontszam);
+            this.Controls.Add(this.FeherPontSzam);
             this.Controls.Add(this.FeketeFeladas);
             this.Controls.Add(this.FeketeAmong);
             this.Controls.Add(this.FeherFeladas);
@@ -175,8 +175,8 @@ namespace MalomGame
         private System.Windows.Forms.Button FeherFeladas;
         private System.Windows.Forms.PictureBox FeketeAmong;
         private System.Windows.Forms.Button FeketeFeladas;
-        private System.Windows.Forms.Label FeherGyozelmekSzamaLabel;
-        private System.Windows.Forms.Label FeketeGyozelmekSzamaLabel;
+        private System.Windows.Forms.Label FeherPontSzam;
+        private System.Windows.Forms.Label FeketePontszam;
         private System.Windows.Forms.PictureBox Tabla;
         private System.Windows.Forms.Label FeherLBL;
         private System.Windows.Forms.Label FeketeLBL;
