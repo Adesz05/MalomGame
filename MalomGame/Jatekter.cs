@@ -163,14 +163,12 @@ namespace MalomGame
                 if (kiJon == 0)
                 {
                     matrix[sor, oszlop].Image = Image.FromFile(@"feketekorong.png");
-                    //matrix[sor, oszlop].BackColor = Color.Black;
                     Ellenorzes(sor, oszlop);
                     kiJon = 1;
                 }
                 else
                 {
                     matrix[sor, oszlop].Image = Image.FromFile(@"feketekorong.png");
-                    //matrix[sor, oszlop].BackColor = Color.Blue;
                     Ellenorzes(sor, oszlop);
                     kiJon = 0;
                 }
