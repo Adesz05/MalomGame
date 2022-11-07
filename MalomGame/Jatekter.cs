@@ -163,6 +163,7 @@ namespace MalomGame
                     matrix[sor, oszlop].Kep.Image = Image.FromFile(@"feketekorong.png");
                     matrix[sor, oszlop].VaneRajta = true;
                     matrix[sor, oszlop].MelyikSzin = "fekete";
+                    
                     Ellenorzes(sor, oszlop);
                     kiJon = 1;
                 }
@@ -215,8 +216,8 @@ namespace MalomGame
         {
             if (player1.MelyikSzin == "fehér")
             {
-                MessageBox.Show(player2.Pontszam.ToString());
-                MessageBox.Show(player1.Pontszam.ToString());
+                //MessageBox.Show(player2.Pontszam.ToString());
+                //MessageBox.Show(player1.Pontszam.ToString());
                 player2.Pontszam++;
                 DialogResult valasz = MessageBox.Show(player2.Nev + " Nyert!\nSzeretnétek játszani mégegyet?", "Ügyi bügyi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 TovabbJatszik(valasz);
@@ -261,5 +262,5 @@ namespace MalomGame
                 Close();
             }
         }
-        }
+    }
 }
