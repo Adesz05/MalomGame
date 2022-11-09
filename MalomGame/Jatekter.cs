@@ -22,7 +22,10 @@ namespace MalomGame
         public Jatekter(string Player1, string Player2)
         {
             InitializeComponent();
-            NevekAlattiKorongokLetrehozasa();
+            FutasEllenorzes(Player1, Player2);
+        }
+        private void FutasEllenorzes(string Player1, string Player2)
+        {
             if (elsolefutas)
             {
                 MatrixGeneralas();
@@ -33,10 +36,10 @@ namespace MalomGame
             {
                 FeherLBL.Text = player1.Nev;
                 FeketeLBL.Text = player2.Nev;
-
                 PontSzamKiiras();
                 NevekLblSzepites();
             }
+            NevekAlattiKorongokLetrehozasa();
         }
         private void NevekAlattiKorongokLetrehozasa()
         {
@@ -73,7 +76,6 @@ namespace MalomGame
                 nevAlattiKorongok[i].Fekete.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
-
         private void Randomkezdes(string Player1, string Player2)
         {
             int kikezd = 0;
@@ -198,7 +200,6 @@ namespace MalomGame
 
             FeketevFeher(sor,oszlop);
         }
-
         private void FeketevFeher(int sor, int oszlop)
         {
             //fekete
@@ -251,7 +252,6 @@ namespace MalomGame
             }
             
         }
-
         private void Ellenorzes(int sor, int oszlop)
         {
             ElfogytakAKorongok();
@@ -278,7 +278,6 @@ namespace MalomGame
                 TovabbJatszik(valasz);
             }
         }
-
         private void FeherFeladas_Click(object sender, EventArgs e)
         {
             if (player1.MelyikSzin == "fehér")
@@ -295,7 +294,6 @@ namespace MalomGame
 
             }
         }
-
         private void FeketeFeladas_Click(object sender, EventArgs e)
         {
             if (player1.MelyikSzin == "fekete")
@@ -311,7 +309,6 @@ namespace MalomGame
                 TovabbJatszik(valasz);
             }
         }
-
         private void TovabbJatszik(DialogResult valasz)
         {
             if (valasz == DialogResult.Yes)
