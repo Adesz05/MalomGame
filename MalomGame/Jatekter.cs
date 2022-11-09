@@ -14,6 +14,7 @@ namespace MalomGame
     {
         static int meret = 9;
         static Korongok[,] matrix = new Korongok[meret, meret];
+        static List<NevekAlattiKorongok> nevAlattiKorongok = new List<NevekAlattiKorongok>();
         static Player player1;
         static Player player2;
         static int kiJon = 0;
@@ -22,6 +23,7 @@ namespace MalomGame
         public Jatekter(string Player1, string Player2)
         {
             InitializeComponent();
+            NevekAlattiKorongokLetrehozasa();
             if (elsolefutas)
             {
                 MatrixGeneralas();
@@ -37,6 +39,42 @@ namespace MalomGame
                 NevekLblSzepites();
             }
             
+        }
+
+        private void NevekAlattiKorongokLetrehozasa()
+        {
+            int j = 0;
+            for (int i = 0; i < 9; i++)
+            {
+                nevAlattiKorongok.Add(new NevekAlattiKorongok(new PictureBox(), new PictureBox()));
+                nevAlattiKorongok[i].Feher.Parent = this;
+                nevAlattiKorongok[i].Feher.Name = "feketekorong" + i;
+                nevAlattiKorongok[i].Feher.Size = new Size(41, 41);
+                if (i < 5) nevAlattiKorongok[i].Feher.Location = new Point(12 + i * 47, 482);
+                else
+                {
+                    nevAlattiKorongok[i].Feher.Location = new Point(12 + j * 47, 482 + 47);
+                }
+                nevAlattiKorongok[i].Feher.BackColor = Color.FromArgb(0, 0, 0, 50);
+                nevAlattiKorongok[i].Feher.Image = Image.FromFile(@"feherkorong.png");
+                nevAlattiKorongok[i].Feher.BringToFront();
+                nevAlattiKorongok[i].Feher.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                //fekete
+                nevAlattiKorongok[i].Fekete.Parent = this;
+                nevAlattiKorongok[i].Fekete.Name = "feketekorong" + i;
+                nevAlattiKorongok[i].Fekete.Size = new Size(41, 41);
+                if (i < 5) nevAlattiKorongok[i].Fekete.Location = new Point(778 + i * 47, 482);
+                else
+                {
+                    nevAlattiKorongok[i].Fekete.Location = new Point(778 + j * 47, 482 + 47);
+                    j++;
+                }
+                nevAlattiKorongok[i].Fekete.BackColor = Color.FromArgb(0, 0, 0, 50);
+                nevAlattiKorongok[i].Fekete.Image = Image.FromFile(@"feketekorong.png");
+                nevAlattiKorongok[i].Fekete.BringToFront();
+                nevAlattiKorongok[i].Fekete.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
 
         private void PontKiiras()
@@ -152,18 +190,12 @@ namespace MalomGame
         private void IgaziMatrixGeneralas(int i, int j)
         {
             matrix[i, j]=new Korongok(new PictureBox(),false,"üres");
-            //matrix[i, j].Nincsrajta();
             matrix[i, j].Kep.Parent = this;
             matrix[i, j].Kep.Name = i + "_" + j;
             matrix[i, j].Kep.Size = new Size(41, 41);
             matrix[i, j].Kep.Location = new Point(256 + 60 * j, 31 + 60 * i);
-            //matrix[i, j].Location = new Point(60 * j,60 * i);
             matrix[i, j].Kep.BackColor = Color.FromArgb(0, 0, 0, 50);
-            //matrix[i, j].BackColor = Color.Black;
             matrix[i, j].Kep.BringToFront();
-            //matrix[i, j].Visible = false;
-            //this.Controls.Add(matrix[i, j]);
-
             matrix[i, j].Kep.SizeMode = PictureBoxSizeMode.StretchImage;
             matrix[i, j].Kep.Click += new EventHandler(Klikkeles);
         }
@@ -181,25 +213,47 @@ namespace MalomGame
 
         private void FeketevFeher(int sor, int oszlop)
         {
-                if (kiJon == 0)
+            //fekete
+            if (kiJon == 0)
+            {
+                if (!matrix[sor, oszlop].VaneRajta)
                 {
+                    if (player1.MelyikSzin == "fekete")
+                    {
+                        nevAlattiKorongok[player1.NemTablanLevoKorongokSzama - 1].Fekete.Visible = false;
+                    }
+                    else
+                    {
+                        nevAlattiKorongok[player2.NemTablanLevoKorongokSzama - 1].Fekete.Visible = false;
+                    }
                     matrix[sor, oszlop].Kep.Image = Image.FromFile(@"feketekorong.png");
                     matrix[sor, oszlop].VaneRajta = true;
                     matrix[sor, oszlop].MelyikSzin = "fekete";
-                    
                     Ellenorzes(sor, oszlop);
                     kiJon = 1;
                 }
-                else
+            }
+            //fehér
+            else
+            {
+                if (!matrix[sor, oszlop].VaneRajta)
                 {
+                    if (player1.MelyikSzin == "fehér")
+                    {
+                        nevAlattiKorongok[player1.NemTablanLevoKorongokSzama - 1].Feher.Visible = false;
+                    }
+                    else
+                    {
+                        nevAlattiKorongok[player2.NemTablanLevoKorongokSzama - 1].Feher.Visible = false;
+                    }
                     matrix[sor, oszlop].Kep.Image = Image.FromFile(@"feherkorong.png");
                     matrix[sor, oszlop].VaneRajta = true;
                     matrix[sor, oszlop].MelyikSzin = "fehér";
                     Ellenorzes(sor, oszlop);
                     kiJon = 0;
                 }
+            }
             
-                // NAGYON SOK ELLENŐRZÉS MÉG
         }
 
         private void Ellenorzes(int sor, int oszlop)
@@ -283,5 +337,7 @@ namespace MalomGame
                 Close();
             }
         }
+
+
     }
 }
