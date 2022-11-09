@@ -221,10 +221,14 @@ namespace MalomGame
                     if (player1.MelyikSzin == "fekete")
                     {
                         nevAlattiKorongok[player1.NemTablanLevoKorongokSzama - 1].Fekete.Visible = false;
+                        player1.NemTablanLevoKorongokSzama--;
+                        player1.TablanLevoKorongokSzama--;
                     }
                     else
                     {
                         nevAlattiKorongok[player2.NemTablanLevoKorongokSzama - 1].Fekete.Visible = false;
+                        player2.NemTablanLevoKorongokSzama--;
+                        player2.TablanLevoKorongokSzama--;
                     }
                     matrix[sor, oszlop].Kep.Image = Image.FromFile(@"feketekorong.png");
                     matrix[sor, oszlop].VaneRajta = true;
@@ -241,10 +245,14 @@ namespace MalomGame
                     if (player1.MelyikSzin == "fehér")
                     {
                         nevAlattiKorongok[player1.NemTablanLevoKorongokSzama - 1].Feher.Visible = false;
+                        player1.NemTablanLevoKorongokSzama--;
+                        player1.TablanLevoKorongokSzama--;
                     }
                     else
                     {
                         nevAlattiKorongok[player2.NemTablanLevoKorongokSzama - 1].Feher.Visible = false;
+                        player2.NemTablanLevoKorongokSzama--;
+                        player2.TablanLevoKorongokSzama--;
                     }
                     matrix[sor, oszlop].Kep.Image = Image.FromFile(@"feherkorong.png");
                     matrix[sor, oszlop].VaneRajta = true;
