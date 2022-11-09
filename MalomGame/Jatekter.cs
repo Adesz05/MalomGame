@@ -18,6 +18,8 @@ namespace MalomGame
         static Player player1;
         static Player player2;
         static int kiJon = 0;
+        static int kikezd = 0;
+        static bool VanEKijelolt = false;
         static bool elsolefutas = true;
         public Jatekter(string Player1, string Player2)
         {
@@ -181,7 +183,7 @@ namespace MalomGame
         }
         private void IgaziMatrixGeneralas(int i, int j)
         {
-            matrix[i, j]=new Korongok(new PictureBox(),false,"üres");
+            matrix[i, j]=new Korongok(new PictureBox(),false,false,"üres");
             matrix[i, j].Kep.Parent = this;
             matrix[i, j].Kep.Name = i + "_" + j;
             matrix[i, j].Kep.Size = new Size(41, 41);
@@ -196,9 +198,27 @@ namespace MalomGame
             PictureBox klikkelt=sender as PictureBox;
             int sor = Convert.ToInt32(klikkelt.Name.Split('_')[0]);
             int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[1]);
-            //MessageBox.Show(sor.ToString() + " "+ oszlop.ToString());
+            MessageBox.Show(sor.ToString() + " "+ oszlop.ToString());
+            if (VanEKijelolt)
+            {
+                //lehetséges class amibe a lehetséges pozíciók kerülnek
+                //elmegyünk a 4 irányba és keressük a pictureboxokat
+            }
+            
+            if (!(player1.NemTablanLevoKorongokSzama==0 && player2.NemTablanLevoKorongokSzama==0))
+            {
+                FeketevFeher(sor, oszlop);
+            }
+            else
+            {
+                if (kiJon==0 && matrix[sor,oszlop].MelyikSzin=="fekete")
+                {
+                    matrix[sor,oszlop].Kijelolt = true;
+                    VanEKijelolt = true;
 
-            FeketevFeher(sor,oszlop);
+                }
+            }
+            
         }
         private void FeketevFeher(int sor, int oszlop)
         {

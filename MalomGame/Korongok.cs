@@ -11,12 +11,14 @@ namespace MalomGame
     {
         public PictureBox Kep;
         public bool VaneRajta;
+        public bool Kijelolt;
         public string MelyikSzin;
 
-        public Korongok(PictureBox kep, bool vanerajta, string melyikszin)
+        public Korongok(PictureBox kep, bool vanerajta,bool kijelolt, string melyikszin)
         {
             Kep = kep;
             VaneRajta = false;
+            Kijelolt = false;
             MelyikSzin = melyikszin;
         }
         public void Nincsrajta()
