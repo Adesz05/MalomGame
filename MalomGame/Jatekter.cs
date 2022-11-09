@@ -32,25 +32,11 @@ namespace MalomGame
             {
                 FeherLBL.Text = player1.Nev;
                 FeketeLBL.Text = player2.Nev;
-                PontKiiras();
 
+                PontSzamKiiras();
                 NevekLblSzepites();
             }
             
-        }
-
-        private void PontKiiras()
-        {
-            if (player1.MelyikSzin == "fehér")
-            {
-                FeherPontSzam.Text = "A pontszám: " + player1.Pontszam.ToString();
-                FeketePontszam.Text = "A pontszám: " + player2.Pontszam.ToString();
-            }
-            else
-            {
-                FeherPontSzam.Text = "A pontszám: " + player2.Pontszam.ToString();
-                FeketePontszam.Text = "A pontszám: " + player1.Pontszam.ToString();
-            }
         }
 
         private void Randomkezdes(string Player1, string Player2)
@@ -81,21 +67,35 @@ namespace MalomGame
             }
             else
             {
-                player2 = new Player(Player2, "fehér", 0, 0, 9);
-                player1 = new Player(Player1, "fekete", 0, 0, 9);
+                player1 = new Player(Player2, "fehér", 0, 0, 9);
+                player2 = new Player(Player1, "fekete", 0, 0, 9);
 
-                FeherLBL.Text = player2.Nev;
-                FeketeLBL.Text = player1.Nev;
+                FeherLBL.Text = player1.Nev;
+                FeketeLBL.Text = player2.Nev;
 
                 NevekLblSzepites();
+             
             }
+        }
+
+        private void PontSzamKiiras()
+        {
+            if (player1.MelyikSzin == "fehér")
+            {
+                FeherPontSzam.Text = "A pontszám: " + player2.Pontszam.ToString();
+                FeketePontszam.Text = "A pontszám: " + player1.Pontszam.ToString();
+            }
+            else
+            {
+                FeherPontSzam.Text = "A pontszám: " + player1.Pontszam.ToString();
+                FeketePontszam.Text = "A pontszám: " + player2.Pontszam.ToString();
+            }
+
         }
 
         private void NevekLblSzepites()
         {
             FeherLBL.TextAlign = ContentAlignment.MiddleCenter;
-            FeherLBL.TextAlign = ContentAlignment.MiddleCenter;
-            FeketeLBL.TextAlign = ContentAlignment.MiddleCenter;
             FeketeLBL.TextAlign = ContentAlignment.MiddleCenter;
         }
 
@@ -205,8 +205,6 @@ namespace MalomGame
         private void Ellenorzes(int sor, int oszlop)
         {
             ElfogytakAKorongok();
-
-          
 
             // ITT IS MÉG SOK ELLENŐRZÉS
         }
