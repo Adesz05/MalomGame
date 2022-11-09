@@ -18,7 +18,6 @@ namespace MalomGame
         static Player player1;
         static Player player2;
         static int kiJon = 0;
-        static int kikezd = 0;
         static bool elsolefutas = true;
         public Jatekter(string Player1, string Player2)
         {
@@ -38,9 +37,7 @@ namespace MalomGame
                 PontSzamKiiras();
                 NevekLblSzepites();
             }
-            
         }
-
         private void NevekAlattiKorongokLetrehozasa()
         {
             int j = 0;
@@ -79,6 +76,7 @@ namespace MalomGame
 
         private void Randomkezdes(string Player1, string Player2)
         {
+            int kikezd = 0;
             Random r = new Random();
             int r1 = r.Next(1, 3);
             if (r1 == 1)
@@ -89,10 +87,6 @@ namespace MalomGame
             {
                 kikezd = 2;
             }
-            Nevek(Player1, Player2);
-        }
-        private void Nevek(string Player1, string Player2)
-        {
             if (kikezd == 1)
             {
                 player1 = new Player(Player1, "fehér", 0, 0, 9);
@@ -112,10 +106,9 @@ namespace MalomGame
                 FeketeLBL.Text = player2.Nev;
 
                 NevekLblSzepites();
-             
             }
-        }
 
+        }
         private void PontSzamKiiras()
         {
             if (player1.MelyikSzin == "fehér")
@@ -130,13 +123,11 @@ namespace MalomGame
             }
 
         }
-
         private void NevekLblSzepites()
         {
             FeherLBL.TextAlign = ContentAlignment.MiddleCenter;
             FeketeLBL.TextAlign = ContentAlignment.MiddleCenter;
         }
-
         private void MatrixGeneralas()
         {
             for (int i = 0; i < meret; i++)
@@ -186,7 +177,6 @@ namespace MalomGame
             }
             //Tabla.SendToBack();
         }
-
         private void IgaziMatrixGeneralas(int i, int j)
         {
             matrix[i, j]=new Korongok(new PictureBox(),false,"üres");
@@ -199,8 +189,6 @@ namespace MalomGame
             matrix[i, j].Kep.SizeMode = PictureBoxSizeMode.StretchImage;
             matrix[i, j].Kep.Click += new EventHandler(Klikkeles);
         }
-
-        
         private void Klikkeles(object sender, EventArgs e)
         {
             PictureBox klikkelt=sender as PictureBox;
@@ -267,17 +255,14 @@ namespace MalomGame
         private void Ellenorzes(int sor, int oszlop)
         {
             ElfogytakAKorongok();
-
             // ITT IS MÉG SOK ELLENŐRZÉS
         }
-
         private void Csere()
         {
             Player segedplayer = player1;
             player1 = player2;
             player2 = segedplayer;
         }
-
         private void ElfogytakAKorongok()
         {
             if (player1.TablanLevoKorongokSzama + player1.NemTablanLevoKorongokSzama < 3)
@@ -343,7 +328,5 @@ namespace MalomGame
                 Close();
             }
         }
-
-
     }
 }
