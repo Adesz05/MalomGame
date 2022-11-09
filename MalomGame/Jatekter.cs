@@ -32,10 +32,25 @@ namespace MalomGame
             {
                 FeherLBL.Text = player1.Nev;
                 FeketeLBL.Text = player2.Nev;
+                PontKiiras();
 
                 NevekLblSzepites();
             }
             
+        }
+
+        private void PontKiiras()
+        {
+            if (player1.MelyikSzin == "fehér")
+            {
+                FeherPontSzam.Text = "A pontszám: " + player1.Pontszam.ToString();
+                FeketePontszam.Text = "A pontszám: " + player2.Pontszam.ToString();
+            }
+            else
+            {
+                FeherPontSzam.Text = "A pontszám: " + player2.Pontszam.ToString();
+                FeketePontszam.Text = "A pontszám: " + player1.Pontszam.ToString();
+            }
         }
 
         private void Randomkezdes(string Player1, string Player2)
@@ -191,16 +206,7 @@ namespace MalomGame
         {
             ElfogytakAKorongok();
 
-            if (player1.MelyikSzin == "fehér")
-            {
-                FeherPontSzam.Text = "A pontszám: " + player1.Pontszam.ToString();
-                FeketePontszam.Text = "A pontszám: " + player2.Pontszam.ToString();
-            }
-            else
-            {
-                FeherPontSzam.Text = "A pontszám: " + player2.Pontszam.ToString();
-                FeketePontszam.Text ="A pontszám: "  + player1.Pontszam.ToString();
-            }
+          
 
             // ITT IS MÉG SOK ELLENŐRZÉS
         }
@@ -210,8 +216,6 @@ namespace MalomGame
             Player segedplayer = player1;
             player1 = player2;
             player2 = segedplayer;
-
-        
         }
 
         private void ElfogytakAKorongok()
