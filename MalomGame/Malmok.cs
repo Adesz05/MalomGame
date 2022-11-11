@@ -8,6 +8,6 @@ namespace MalomGame
 {
     class Malmok
     {
-        public int x, y;
+       
     }
 }
