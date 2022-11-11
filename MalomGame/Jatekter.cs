@@ -33,7 +33,22 @@ namespace MalomGame
         private void AdikaMegtoltes()
         {
             adika.Add(new Malmok(0, 0, 0, 4, 0, 8));
-
+            adika.Add(new Malmok(0,8,4,8,8,8));
+            adika.Add(new Malmok(8,0,8,4,8,8));
+            adika.Add(new Malmok(0,0,4,0,8,0));
+            adika.Add(new Malmok(1,1,1,4,1,7));
+            adika.Add(new Malmok(1,7,4,7,7,7));
+            adika.Add(new Malmok(7,7,7,4,7,1));
+            adika.Add(new Malmok(7,1,4,1,1,1));
+            adika.Add(new Malmok(2,2,2,4,2,6));
+            adika.Add(new Malmok(2,6,4,6,6,6));
+            adika.Add(new Malmok(6,6,6,4,6,2));
+            adika.Add(new Malmok(6,2,4,2,2,2));
+            adika.Add(new Malmok(0,4,1,4,2,4));
+            adika.Add(new Malmok(4,6,4,7,4,8));
+            adika.Add(new Malmok(6,4,7,4,8,4));
+            adika.Add(new Malmok(4,2,4,1,4,0));
+            //MessageBox.Show(adika[0].Malomok[2].Y.ToString());
         }
 
         private void FutasEllenorzes(string Player1, string Player2)
@@ -194,7 +209,7 @@ namespace MalomGame
         }
         private void IgaziMatrixGeneralas(int i, int j)
         {
-            matrix[i, j]=new Korongok(new PictureBox(),false,false,"üres");
+            matrix[i, j]=new Korongok(new PictureBox(),false,"üres");
             matrix[i, j].Kep.Parent = this;
             matrix[i, j].Kep.Name = i + "_" + j;
             matrix[i, j].Kep.Size = new Size(41, 41);
@@ -218,27 +233,29 @@ namespace MalomGame
                     if (kiJon == "fehér")
                     {
                         matrix[sor, oszlop].Kep.Image = Image.FromFile(@"feherkorong.png");
+                        matrix[sor, oszlop].VaneRajta = true;
+                        matrix[sor, oszlop].MelyikSzin = "fehér";
+                        matrix[elozosor, elozooszlop].Kep.Image = null;
                         matrix[elozosor, elozooszlop].MelyikSzin = "üres";
                         matrix[elozosor, elozooszlop].VaneRajta = false;
-                        matrix[elozosor, elozooszlop].Kep.Image = null;
                         kiJon = "fekete";
                         VanEKijelolt = false;
                     }
                     else
                     {
                         matrix[sor, oszlop].Kep.Image = Image.FromFile(@"feketekorong.png");
+                        matrix[sor, oszlop].VaneRajta = true;
+                        matrix[sor, oszlop].MelyikSzin = "fekete";
+                        matrix[elozosor, elozooszlop].Kep.Image = null;
                         matrix[elozosor, elozooszlop].MelyikSzin = "üres";
                         matrix[elozosor, elozooszlop].VaneRajta = false;
-                        matrix[elozosor, elozooszlop].Kep.Image = null;
                         kiJon = "fehér";
                         VanEKijelolt = false;
                     }
 
 
                 }
-            }
-            
-            if (!(player1.NemTablanLevoKorongokSzama==0 && player2.NemTablanLevoKorongokSzama==0))
+            }else if (!(player1.NemTablanLevoKorongokSzama==0 && player2.NemTablanLevoKorongokSzama==0))
             {
                 FeketevFeher(sor, oszlop);
             }
