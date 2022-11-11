@@ -18,7 +18,6 @@ namespace MalomGame
         static Player player1;
         static Player player2;
         static string kiJon = "fehér";
-        static int kikezd = 0;
         static int elozosor = 0;
         static int elozooszlop = 0;
         static bool VanEKijelolt = false;
@@ -34,18 +33,7 @@ namespace MalomGame
         private void AdikaMegtoltes()
         {
             adika.Add(new Malmok(0, 0, 0, 4, 0, 8));
-            adika.Add(new Malmok());
-            adika.Add(new Malmok());
-            adika.Add(new Malmok());
-            adika.Add(new Malmok());
-            adika.Add(new Malmok());
-            adika.Add(new Malmok());
-            adika.Add(new Malmok());
-            adika.Add(new Malmok());
-            adika.Add(new Malmok());
-            adika.Add(new Malmok());
-            adika.Add(new Malmok());
-            adika.Add(new Malmok());
+
         }
 
         private void FutasEllenorzes(string Player1, string Player2)
@@ -221,7 +209,7 @@ namespace MalomGame
             PictureBox klikkelt=sender as PictureBox;
             int sor = Convert.ToInt32(klikkelt.Name.Split('_')[0]);
             int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[1]);
-            //MessageBox.Show(sor.ToString() + " "+ oszlop.ToString());
+            MessageBox.Show(sor.ToString() + " "+ oszlop.ToString());
             if (VanEKijelolt)
             {
                 if (matrix[sor,oszlop].MelyikSzin=="üres")
