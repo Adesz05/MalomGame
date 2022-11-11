@@ -58,6 +58,7 @@
     <Compile Include="Jatekter.Designer.cs">
       <DependentUpon>Jatekter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Koordinatak.cs" />
     <Compile Include="Korongok.cs" />
     <Compile Include="Malmok.cs" />
     <Compile Include="NevekAlattiKorongok.cs" />

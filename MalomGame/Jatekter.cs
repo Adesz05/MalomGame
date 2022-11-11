@@ -23,11 +23,31 @@ namespace MalomGame
         static int elozooszlop = 0;
         static bool VanEKijelolt = false;
         static bool elsolefutas = true;
+        static List<Malmok> adika=new List<Malmok>();
         public Jatekter(string Player1, string Player2)
         {
             InitializeComponent();
             FutasEllenorzes(Player1, Player2);
+            AdikaMegtoltes();
         }
+
+        private void AdikaMegtoltes()
+        {
+            adika.Add(new Malmok(0, 0, 0, 4, 0, 8));
+            adika.Add(new Malmok());
+            adika.Add(new Malmok());
+            adika.Add(new Malmok());
+            adika.Add(new Malmok());
+            adika.Add(new Malmok());
+            adika.Add(new Malmok());
+            adika.Add(new Malmok());
+            adika.Add(new Malmok());
+            adika.Add(new Malmok());
+            adika.Add(new Malmok());
+            adika.Add(new Malmok());
+            adika.Add(new Malmok());
+        }
+
         private void FutasEllenorzes(string Player1, string Player2)
         {
             if (elsolefutas)
