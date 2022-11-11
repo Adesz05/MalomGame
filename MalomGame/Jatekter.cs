@@ -17,8 +17,10 @@ namespace MalomGame
         static List<NevekAlattiKorongok> nevAlattiKorongok = new List<NevekAlattiKorongok>();
         static Player player1;
         static Player player2;
-        static int kiJon = 0;
+        static string kiJon = "fehér";
         static int kikezd = 0;
+        static int elozosor = 0;
+        static int elozooszlop = 0;
         static bool VanEKijelolt = false;
         static bool elsolefutas = true;
         public Jatekter(string Player1, string Player2)
@@ -198,11 +200,32 @@ namespace MalomGame
             PictureBox klikkelt=sender as PictureBox;
             int sor = Convert.ToInt32(klikkelt.Name.Split('_')[0]);
             int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[1]);
-            MessageBox.Show(sor.ToString() + " "+ oszlop.ToString());
+            //MessageBox.Show(sor.ToString() + " "+ oszlop.ToString());
             if (VanEKijelolt)
             {
-                //lehetséges class amibe a lehetséges pozíciók kerülnek
-                //elmegyünk a 4 irányba és keressük a pictureboxokat
+                if (matrix[sor,oszlop].MelyikSzin=="üres")
+                {
+                    if (kiJon == "fehér")
+                    {
+                        matrix[sor, oszlop].Kep.Image = Image.FromFile(@"feherkorong.png");
+                        matrix[elozosor, elozooszlop].MelyikSzin = "üres";
+                        matrix[elozosor, elozooszlop].VaneRajta = false;
+                        matrix[elozosor, elozooszlop].Kep.Image = null;
+                        kiJon = "fekete";
+                        VanEKijelolt = false;
+                    }
+                    else
+                    {
+                        matrix[sor, oszlop].Kep.Image = Image.FromFile(@"feketekorong.png");
+                        matrix[elozosor, elozooszlop].MelyikSzin = "üres";
+                        matrix[elozosor, elozooszlop].VaneRajta = false;
+                        matrix[elozosor, elozooszlop].Kep.Image = null;
+                        kiJon = "fehér";
+                        VanEKijelolt = false;
+                    }
+
+
+                }
             }
             
             if (!(player1.NemTablanLevoKorongokSzama==0 && player2.NemTablanLevoKorongokSzama==0))
@@ -211,11 +234,20 @@ namespace MalomGame
             }
             else
             {
-                if (kiJon==0 && matrix[sor,oszlop].MelyikSzin=="fekete")
-                {
-                    matrix[sor,oszlop].Kijelolt = true;
-                    VanEKijelolt = true;
 
+                if (kiJon == "fehér" && matrix[sor, oszlop].MelyikSzin == "fehér")
+                {
+                    //matrix[sor, oszlop].Kijelolt = true;
+                    VanEKijelolt = true;
+                    elozosor = sor;
+                    elozooszlop = oszlop;
+                }
+                if (kiJon == "fekete" && matrix[sor, oszlop].MelyikSzin == "fekete")
+                {
+                    //matrix[sor, oszlop].Kijelolt = true;
+                    VanEKijelolt = true;
+                    elozosor = sor;
+                    elozooszlop = oszlop;
                 }
             }
             
@@ -223,7 +255,7 @@ namespace MalomGame
         private void FeketevFeher(int sor, int oszlop)
         {
             //fekete
-            if (kiJon == 0)
+            if (kiJon == "fekete")
             {
                 if (!matrix[sor, oszlop].VaneRajta)
                 {
@@ -243,7 +275,7 @@ namespace MalomGame
                     matrix[sor, oszlop].VaneRajta = true;
                     matrix[sor, oszlop].MelyikSzin = "fekete";
                     Ellenorzes(sor, oszlop);
-                    kiJon = 1;
+                    kiJon = "fehér";
                 }
             }
             //fehér
@@ -267,7 +299,7 @@ namespace MalomGame
                     matrix[sor, oszlop].VaneRajta = true;
                     matrix[sor, oszlop].MelyikSzin = "fehér";
                     Ellenorzes(sor, oszlop);
-                    kiJon = 0;
+                    kiJon = "fekete";
                 }
             }
             
