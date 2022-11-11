@@ -8,7 +8,7 @@ namespace MalomGame
 {
     class Malmok
     {
-        public List<Koordinatak> Malomok;
+        public List<Koordinatak> Malomok=new List<Koordinatak>();
 
         public Malmok(int elso, int elsoke, int masodik,int masodikocska, int harmadik, int harmadikocska)
         {
