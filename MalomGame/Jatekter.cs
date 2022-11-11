@@ -198,6 +198,7 @@ namespace MalomGame
             matrix[i, j].Kep.Parent = this;
             matrix[i, j].Kep.Name = i + "_" + j;
             matrix[i, j].Kep.Size = new Size(41, 41);
+            matrix[i, j].Kep.BorderStyle = BorderStyle.FixedSingle;
             matrix[i, j].Kep.Location = new Point(256 + 60 * j, 31 + 60 * i);
             matrix[i, j].Kep.BackColor = Color.FromArgb(0, 0, 0, 50);
             matrix[i, j].Kep.BringToFront();
