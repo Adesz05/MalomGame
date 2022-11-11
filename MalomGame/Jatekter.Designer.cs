@@ -39,13 +39,9 @@ namespace MalomGame
             this.Tabla = new System.Windows.Forms.PictureBox();
             this.FeherLBL = new System.Windows.Forms.Label();
             this.FeketeLBL = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.FeherAmong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FeketeAmong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tabla)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // FeherAmong
@@ -148,30 +144,12 @@ namespace MalomGame
             this.FeketeLBL.Size = new System.Drawing.Size(180, 30);
             this.FeketeLBL.TabIndex = 19;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(782, 482);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 41);
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(829, 482);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(41, 41);
-            this.pictureBox2.TabIndex = 21;
-            this.pictureBox2.TabStop = false;
-            // 
             // Jatekter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1009, 616);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.FeketeLBL);
             this.Controls.Add(this.FeherLBL);
             this.Controls.Add(this.FeketePontszam);
@@ -188,8 +166,6 @@ namespace MalomGame
             ((System.ComponentModel.ISupportInitialize)(this.FeherAmong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FeketeAmong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tabla)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,7 +182,5 @@ namespace MalomGame
         private System.Windows.Forms.PictureBox Tabla;
         private System.Windows.Forms.Label FeherLBL;
         private System.Windows.Forms.Label FeketeLBL;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
