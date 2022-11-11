@@ -38,6 +38,7 @@ namespace MalomGame
             }
             else
             {
+                MatrixGeneralas();
                 FeherLBL.Text = player1.Nev;
                 FeketeLBL.Text = player2.Nev;
                 PontSzamKiiras();
@@ -302,13 +303,27 @@ namespace MalomGame
                     kiJon = "fekete";
                 }
             }
+
             
         }
         private void Ellenorzes(int sor, int oszlop)
         {
             ElfogytakAKorongok();
+            VaneMalom(sor, oszlop);
             // ITT IS MÉG SOK ELLENŐRZÉS
         }
+
+        private void VaneMalom(int sor, int oszlop)
+        {
+            for (int i = 0; i < meret; i++)
+            {
+                for (int j = 0; j < meret; j++)
+                {
+                   
+                }
+            }
+        }
+
         private void Csere()
         {
             Player segedplayer = player1;
