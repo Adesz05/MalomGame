@@ -18,7 +18,6 @@ namespace MalomGame
         static Player player1;
         static Player player2;
         static int kiJon = 0;
-        static int kikezd = 0;
         static bool VanEKijelolt = false;
         static bool elsolefutas = true;
         public Jatekter(string Player1, string Player2)
@@ -36,6 +35,7 @@ namespace MalomGame
             }
             else
             {
+                MatrixGeneralas();
                 FeherLBL.Text = player1.Nev;
                 FeketeLBL.Text = player2.Nev;
                 PontSzamKiiras();
@@ -270,13 +270,27 @@ namespace MalomGame
                     kiJon = 0;
                 }
             }
+
             
         }
         private void Ellenorzes(int sor, int oszlop)
         {
             ElfogytakAKorongok();
+            VaneMalom(sor, oszlop);
             // ITT IS MÉG SOK ELLENŐRZÉS
         }
+
+        private void VaneMalom(int sor, int oszlop)
+        {
+            for (int i = 0; i < meret; i++)
+            {
+                for (int j = 0; j < meret; j++)
+                {
+                   
+                }
+            }
+        }
+
         private void Csere()
         {
             Player segedplayer = player1;
