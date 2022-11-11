@@ -18,7 +18,6 @@ namespace MalomGame
         static Player player1;
         static Player player2;
         static string kiJon = "fehér";
-        static int kikezd = 0;
         static int elozosor = 0;
         static int elozooszlop = 0;
         static bool VanEKijelolt = false;

@@ -16,9 +16,5 @@ namespace MalomGame
             Malomok.Add(new Koordinatak(masodik,masodikocska));
             Malomok.Add(new Koordinatak(harmadik,harmadikocska));
         }
-        public Malmok()
-        {
-
-        }
     }
 }
