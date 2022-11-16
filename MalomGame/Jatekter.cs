@@ -201,13 +201,23 @@ namespace MalomGame
                     {
                         IgaziMatrixGeneralas(i, j);
                     }
+                    else
+                    {
+                        HamisMatrixGeneralas(i, j);
+                    }
                 }
             }
             //Tabla.SendToBack();
         }
+
+        private void HamisMatrixGeneralas(int i, int j)
+        {
+            matrix[i, j] = new Korongok(false);
+        }
+
         private void IgaziMatrixGeneralas(int i, int j)
         {
-            matrix[i, j]=new Korongok(new PictureBox(),false,"üres");
+            matrix[i, j]=new Korongok(new PictureBox(),true,false,"üres");
             matrix[i, j].Kep.Parent = this;
             matrix[i, j].Kep.Name = i + "_" + j;
             matrix[i, j].Kep.Size = new Size(41, 41);
@@ -224,36 +234,50 @@ namespace MalomGame
             int sor = Convert.ToInt32(klikkelt.Name.Split('_')[0]);
             int oszlop = Convert.ToInt32(klikkelt.Name.Split('_')[1]);
             //MessageBox.Show(sor.ToString() + " "+ oszlop.ToString());
-           
+            label1.Text = elozosor.ToString() + " " + elozooszlop.ToString();
             if (VanEKijelolt)
             {
-                if (matrix[sor,oszlop].MelyikSzin=="üres")
+                if (sor == elozosor || oszlop == elozooszlop)
                 {
-                    if (kiJon == "fehér")
+                    if (KozelebeVan(sor, oszlop, elozosor, elozooszlop))
                     {
-                        matrix[sor, oszlop].Kep.Image = Image.FromFile(@"feherkorong.png");
-                        matrix[sor, oszlop].VaneRajta = true;
-                        matrix[sor, oszlop].MelyikSzin = "fehér";
-                        matrix[elozosor, elozooszlop].Kep.Image = null;
-                        matrix[elozosor, elozooszlop].MelyikSzin = "üres";
-                        matrix[elozosor, elozooszlop].VaneRajta = false;
-                        kiJon = "fekete";
-                        VanEKijelolt = false;
+                        if (matrix[sor, oszlop].MelyikSzin == "üres")
+                        {
+                            if (kiJon == "fehér")
+                            {
+                                matrix[sor, oszlop].Kep.Image = Image.FromFile(@"feherkorong.png");
+                                matrix[sor, oszlop].VaneRajta = true;
+                                matrix[sor, oszlop].MelyikSzin = "fehér";
+                                matrix[elozosor, elozooszlop].Kep.Image = null;
+                                matrix[elozosor, elozooszlop].MelyikSzin = "üres";
+                                matrix[elozosor, elozooszlop].VaneRajta = false;
+                                kiJon = "fekete";
+                                VanEKijelolt = false;
+                            }
+                            else
+                            {
+                                matrix[sor, oszlop].Kep.Image = Image.FromFile(@"feketekorong.png");
+                                matrix[sor, oszlop].VaneRajta = true;
+                                matrix[sor, oszlop].MelyikSzin = "fekete";
+                                matrix[elozosor, elozooszlop].Kep.Image = null;
+                                matrix[elozosor, elozooszlop].MelyikSzin = "üres";
+                                matrix[elozosor, elozooszlop].VaneRajta = false;
+                                kiJon = "fehér";
+                                VanEKijelolt = false;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Rossz helyre akarod rakni");
+                        }
                     }
                     else
                     {
-                        matrix[sor, oszlop].Kep.Image = Image.FromFile(@"feketekorong.png");
-                        matrix[sor, oszlop].VaneRajta = true;
-                        matrix[sor, oszlop].MelyikSzin = "fekete";
-                        matrix[elozosor, elozooszlop].Kep.Image = null;
-                        matrix[elozosor, elozooszlop].MelyikSzin = "üres";
-                        matrix[elozosor, elozooszlop].VaneRajta = false;
-                        kiJon = "fehér";
-                        VanEKijelolt = false;
+                        MessageBox.Show("Nem teljesult a feltetel");
+                        VanEKijelolt = !VanEKijelolt;
                     }
-
-
                 }
+                
             }else if (!(player1.NemTablanLevoKorongokSzama==0 && player2.NemTablanLevoKorongokSzama==0))
             {
                 FeketevFeher(sor, oszlop);
@@ -276,9 +300,94 @@ namespace MalomGame
                     elozooszlop = oszlop;
                 }
             }
-            VaneMalom(sor, oszlop);
-
+            
         }
+
+        private bool KozelebeVan(int hovasor, int hovaoszlop, int honnansor, int honnanoszlop)
+        {
+            //jobbra vizsgal
+            //MessageBox.Show("kozelbevane");
+            if (!(honnansor==3 && honnanoszlop==2))
+            {
+                //MessageBox.Show("Jobbra vizsgalas");
+                for (int i = 1; i < 8 - honnanoszlop; i++)
+                {
+                    if (matrix[honnansor, honnanoszlop+ i].Igazi)
+                    {
+                        //MessageBox.Show(honnansor.ToString() + " sor " + (honnanoszlop + i).ToString() + " oszlop");
+                        if (matrix[honnansor, honnanoszlop + i] == matrix[hovasor, hovaoszlop])
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+
+                    }
+                }
+            }
+            if (!(honnansor==3 && honnanoszlop==6))
+            {
+                //MessageBox.Show("Balra vizsgalas");
+                for (int i = 1; i < honnanoszlop + 1; i++)
+                {
+                    if (matrix[honnansor, honnanoszlop- i].Igazi)
+                    {
+                        if (matrix[honnansor, honnanoszlop - i] == matrix[hovasor, hovaoszlop])
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+
+                    }
+                }
+            }
+            if (!(honnanoszlop == 4 && honnansor == 3))
+            {
+                //MessageBox.Show("Lefele vizsgalas");
+                for (int i = 1; i < 8 - honnansor; i++)
+                {
+                    if (matrix[honnansor+i, honnanoszlop].Igazi)
+                    {
+                        if (matrix[honnansor + i, honnanoszlop] == matrix[hovasor, hovaoszlop])
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+
+                    }
+                }
+            }
+            if (!(honnanoszlop == 4 && honnansor == 6))
+            {
+                //MessageBox.Show("Felfele vizsgalas");
+                for (int i = 1; i < honnansor + 1; i++)
+                {
+                    if (matrix[honnansor-i, honnanoszlop].Igazi)
+                    {
+                        if (matrix[honnansor - i, honnanoszlop] == matrix[hovasor, hovaoszlop])
+                        {
+                            //MessageBox.Show("Felfele mozgas");
+                            return true;
+                        }
+                        else
+                        {
+                            break;
+                        }
+
+                    }
+                }
+            }
+            return false;
+        }
+
         private void FeketevFeher(int sor, int oszlop)
         {
             
