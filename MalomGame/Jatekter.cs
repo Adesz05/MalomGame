@@ -307,6 +307,14 @@ namespace MalomGame
 
         private bool KozelebeVan(int hovasor, int hovaoszlop, int honnansor, int honnanoszlop)
         {
+            if (player1.MelyikSzin==kiJon && player1.TablanLevoKorongokSzama == 3)
+            {
+                return true;
+            }
+            if (player2.MelyikSzin == kiJon && player2.TablanLevoKorongokSzama == 3)
+            {
+                return true;
+            }
             //jobbra vizsgal
             //MessageBox.Show("kozelbevane");
             if (!(honnansor==3 && honnanoszlop==2))
