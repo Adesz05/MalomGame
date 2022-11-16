@@ -265,6 +265,7 @@ namespace MalomGame
                                 kiJon = "fehér";
                                 VanEKijelolt = false;
                             }
+                            VaneMalom(sor, oszlop);
                         }
                         else
                         {
@@ -281,6 +282,7 @@ namespace MalomGame
             }else if (!(player1.NemTablanLevoKorongokSzama==0 && player2.NemTablanLevoKorongokSzama==0))
             {
                 FeketevFeher(sor, oszlop);
+                VaneMalom(sor, oszlop);
             }
             else
             {
