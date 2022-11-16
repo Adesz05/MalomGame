@@ -29,7 +29,6 @@ namespace MalomGame
             FutasEllenorzes(Player1, Player2);
             AdikaMegtoltes();
         }
-
         private void AdikaMegtoltes()
         {
             adika.Add(new Malmok(0, 0, 0, 4, 0, 8));
@@ -50,7 +49,6 @@ namespace MalomGame
             adika.Add(new Malmok(4,2,4,1,4,0));
             //MessageBox.Show(adika[0].Malomok[2].Y.ToString());
         }
-
         private void FutasEllenorzes(string Player1, string Player2)
         {
             if (elsolefutas)
@@ -400,6 +398,7 @@ namespace MalomGame
 
         private void FeketevFeher(int sor, int oszlop)
         {
+            
             //fekete
             if (kiJon == "fekete")
             {
@@ -454,17 +453,30 @@ namespace MalomGame
         private void Ellenorzes(int sor, int oszlop)
         {
             ElfogytakAKorongok();
-            VaneMalom(sor, oszlop);
+            
             // ITT IS MÉG SOK ELLENŐRZÉS
         }
 
         private void VaneMalom(int sor, int oszlop)
         {
-            for (int i = 0; i < meret; i++)
+            for (int i = 0; i < 16; i++)
             {
-                for (int j = 0; j < meret; j++)
+                for (int j = 0; j < 3; j++)
                 {
-                   
+                    //adika.Add(new Malmok(0, 0, 0, 4, 0, 8));
+                    //MessageBox.Show(adika[0].Malomok[2].Y.ToString());
+                    if (adika[i].Malomok[j].X == sor)
+                    {
+                        if (adika[i].Malomok[j].Y == oszlop)
+                        {
+                            if (matrix[adika[i].Malomok[0].X, adika[i].Malomok[0].Y].MelyikSzin == kiJon && matrix[adika[i].Malomok[1].X, adika[i].Malomok[1].Y].MelyikSzin == kiJon && matrix[adika[i].Malomok[2].X, adika[i].Malomok[2].Y].MelyikSzin == kiJon)
+                            {
+                                MessageBox.Show(kiJon + " malom");
+                            }
+                           
+                        }
+                    }
+                    
                 }
             }
         }
