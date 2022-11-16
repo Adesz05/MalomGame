@@ -9,16 +9,21 @@ namespace MalomGame
 {
     class Korongok
     {
+        public bool Igazi;
         public PictureBox Kep;
         public bool VaneRajta;
-        public bool Kijelolt;
         public string MelyikSzin;
 
-        public Korongok(PictureBox kep, bool vanerajta, string melyikszin)
+        public Korongok(PictureBox kep,bool igazi, bool vanerajta, string melyikszin)
         {
             Kep = kep;
             VaneRajta = false;
             MelyikSzin = melyikszin;
+            Igazi = igazi;
+        }
+        public Korongok(bool igazi)
+        {
+            Igazi = igazi;
         }
         public void Nincsrajta()
         {
